@@ -67,3 +67,32 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Organisation et sémantique du projet
+
+Tous les éléments : classes, ids, noms de composants, etc doivent être en ANGLAIS !
+
+Requête API :
+avec Axios
+Penser à installer le paquage avec "npm install axios"
+
+Composants :
+CompoName.jsx
+compoName.css
+
+Si on a besoin d'implémenter des image ou autres ressources. Créer un dossier : Assets-compoName
+
+Classes et Id :
+className='min_min'
+id='min-min'
+
+Lors de l'écriture d'un composant, voilà comment organiser le contenu avec la création d'un nouvelle section pour chaque fonctionnalité:
+<div>
+  <section id=''>
+  </section>
+  <section id=''>
+  </section>
+  etc...
+</div>
+
+Si nécessaire, commenter le code pour le rendre plus lisible.
