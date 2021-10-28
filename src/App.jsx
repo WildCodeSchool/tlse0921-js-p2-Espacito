@@ -1,11 +1,17 @@
-import RemoveMe from './components/RemoveMe';
+import React from 'react';
+import TestNeo from './components/TestNeo';
+import NeoInfo from './components/Neo';
 
-function App() {
+export default function App() {
   return (
     <div>
-      <RemoveMe />
+      <h1>marre de cet api</h1>
+
+      <div>
+        {NeoInfo.map((objets) => (
+          <TestNeo key={objets.name} />
+        ))}
+      </div>
     </div>
   );
 }
-
-export default App;
