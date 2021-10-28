@@ -6,35 +6,35 @@ import pod from '../ressources/assets-home/pod.png';
 
 const Home = () => (
   <div>
-    <h1> ESPACITO</h1>
+    <Title> ESPACITO</Title>
     <Cards>
-      <cardImage>
+      <div>
         <img src={presentationiss} alt="ISS icone" />
-      </cardImage>
+      </div>
       <cardTitle>
         <h2>Présentation de l&apos;ISS</h2>
       </cardTitle>
     </Cards>
     <Cards>
-      <cardImage>
-        <img src={isstracker} alt="ISS icone" />
-      </cardImage>
+      <div>
+        <img src={isstracker} alt="Parabol icone" />
+      </div>
       <cardTitle>
-        <h2>ISS Tracker</h2>
+        <h2>Tracker l&apos;ISS</h2>
       </cardTitle>
     </Cards>
     <Cards>
-      <cardImage>
-        <img src={celestobjects} alt="ISS icone" />
-      </cardImage>
+      <div>
+        <img src={celestobjects} alt="Comete icone" />
+      </div>
       <cardTitle>
         <h2>Les objets célestes</h2>
       </cardTitle>
     </Cards>
     <Cards>
-      <cardImage>
-        <img src={pod} alt="ISS icone" />
-      </cardImage>
+      <div>
+        <img src={pod} alt="Telescope icone" />
+      </div>
       <cardTitle>
         <h2>L&apos;image du jour</h2>
       </cardTitle>
@@ -42,34 +42,34 @@ const Home = () => (
   </div>
 );
 
-const Cards = styled.div`
+const Cards = styled.section`
   display: flex;
-  background-color: #e5ebf7;
-  border: solid 1px black;
+  background-color: #f2f7ff;
+  border: solid black;
   border-width: 3px 4px 3px 5px;
   border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  width: 70%;
+  width: 80%;
   margin: 2rem auto;
-  padding: 5px 2rem;
-  justify-content: center;
+  padding: 5px 0;
+  justify-content: flex-start;
   align-items: center;
 
   img {
-    width: 50%;
+    width: 60%;
     margin: 1rem;
   }
 
-  &--cardImage {
+  div {
     display: flex;
     justify-content: center;
-    width: 30% !important;
+    min-width: 40%;
+    max-width: 40%;
+    height: 100%;
   }
+`;
 
-  &--cardTitle {
-    display: flex;
-    padding-right: 1rem;
-    margin-bottom: 2rem;
-  }
+const Title = styled.h1`
+  text-align: center;
 `;
 
 export default Home;
