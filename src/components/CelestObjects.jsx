@@ -1,6 +1,6 @@
 const CelestObjects = () => (
   <div>
-    <h1>Helloworld</h1>
+    <h1>Objets célestes</h1>
   </div>
 );
 export default CelestObjects;
