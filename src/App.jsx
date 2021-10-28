@@ -1,9 +1,9 @@
-import RemoveMe from './components/RemoveMe';
+import Pod from './Pod';
 
 function App() {
   return (
     <div>
-      <RemoveMe />
+      <Pod />
     </div>
   );
 }
