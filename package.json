@@ -20,6 +20,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "eslint --ext .js,.jsx --fix src/ && npx stylelint '**/*.css' --fix",
+    "lint:css":"stylelint './src/**/*.js'",
     "prettify": "pretty-quick --staged"
   },
   "eslintConfig": {
@@ -53,7 +54,10 @@
     "prettier-stylelint": "^0.4.2",
     "pretty-quick": "^3.1.0",
     "stylelint": "^14.0.0",
-    "stylelint-config-standard": "^23.0.0"
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
