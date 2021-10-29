@@ -1,9 +1,9 @@
-import RemoveMe from './components/RemoveMe';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div>
-      <RemoveMe />
+      <Navigation />
     </div>
   );
 }
