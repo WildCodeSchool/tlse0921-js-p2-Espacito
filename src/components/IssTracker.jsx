@@ -1,6 +1,6 @@
 const IssTracker = () => (
   <div>
-    <h1>Helloworld</h1>
+    <h1>Tracker ISS</h1>
   </div>
 );
 export default IssTracker;
