@@ -28,7 +28,7 @@ const Navigation = () => {
   );
 };
 
-const Nav = styled.div`
+const Nav = styled.nav`
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
