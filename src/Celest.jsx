@@ -9,8 +9,8 @@ function CelestObjects() {
         <TestNeo
           name={objets.name}
           id={objets.id}
-          magnitude={objets.absolute_magnitude_h}
-          neo={objets.neo_reference_id}
+          absolute_magnitude_h={objets.absolute_magnitude_h}
+          neo_reference_id={objets.neo_reference_id}
         />
       ))}
     </div>
