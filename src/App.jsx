@@ -1,9 +1,12 @@
-import RemoveMe from './components/RemoveMe';
+import React from 'react';
+import MyMap from './components/Map';
+import VideoIss from './components/VideoIss';
 
 function App() {
   return (
     <div>
-      <RemoveMe />
+      <MyMap />
+      <VideoIss />
     </div>
   );
 }
