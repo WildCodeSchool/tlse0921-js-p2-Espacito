@@ -10,9 +10,9 @@ const Home = () => (
     <CardsContainer>
       <NavLink href="/presentationiss">
         <Cards>
-          <div>
+          <CardImgContainer>
             <img src={presentationiss} alt="ISS icone" />
-          </div>
+          </CardImgContainer>
           <cardTitle>
             <h2>Présentation de l&apos;ISS</h2>
           </cardTitle>
@@ -20,9 +20,9 @@ const Home = () => (
       </NavLink>
       <NavLink href="/isstracker">
         <Cards>
-          <div>
+          <CardImgContainer>
             <img src={isstracker} alt="Parabol icone" />
-          </div>
+          </CardImgContainer>
           <cardTitle>
             <h2>Tracker l&apos;ISS</h2>
           </cardTitle>
@@ -30,9 +30,9 @@ const Home = () => (
       </NavLink>
       <NavLink href="/objetscelestes">
         <Cards>
-          <div>
+          <CardImgContainer>
             <img src={celestobjects} alt="Comete icone" />
-          </div>
+          </CardImgContainer>
           <cardTitle>
             <h2>Les objets célestes</h2>
           </cardTitle>
@@ -40,9 +40,9 @@ const Home = () => (
       </NavLink>
       <NavLink href="/photodujour">
         <Cards>
-          <div>
+          <CardImgContainer>
             <img src={pod} alt="Telescope icone" />
-          </div>
+          </CardImgContainer>
           <cardTitle>
             <h2>L&apos;image du jour</h2>
           </cardTitle>
@@ -67,7 +67,7 @@ const CardsContainer = styled.section`
 
 const Cards = styled.div`
   display: flex;
-  background-color: #f2f7ff;
+  background-color: #c8ced6;
   border: solid black;
   border-width: 3px 4px 3px 5px;
   border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
@@ -82,19 +82,27 @@ const Cards = styled.div`
     margin: 1rem;
   }
 
-  div {
+  /* div {
     display: flex;
     justify-content: center;
     min-width: 40%;
     max-width: 40%;
     height: 100%;
-  }
+  } */
 
   @media (min-width: 768px) {
     margin: 0;
     width: 90%;
     flex-direction: column;
   }
+`;
+
+const CardImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  min-width: 40%;
+  max-width: 40%;
+  height: 100%;
 `;
 
 const Title = styled.h1`
