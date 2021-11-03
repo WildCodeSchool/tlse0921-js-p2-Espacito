@@ -21,7 +21,19 @@ const PodCard = ({ pod }) => (
     </TitlePodCardStyle>
     <TitlePodStyle>{pod.title}</TitlePodStyle>
     <p>{pod.date}</p>
-    <img src={pod.image} alt={pod.title} />
+    {pod.media_type === 'image' ? (
+      <img src={pod.image} alt={pod.title} className="photo" />
+    ) : (
+      <iframe
+        title="space-video"
+        src={pod.image}
+        frameBorder="0"
+        gesture="media"
+        allow="encrypted-media"
+        allowFullScreen
+        className="photo"
+      />
+    )}
     <p>{pod.copyright}</p>
     <p>{pod.explanation}</p>
   </PodCardStyle>
