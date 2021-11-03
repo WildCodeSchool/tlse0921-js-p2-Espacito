@@ -1,10 +1,9 @@
-import React from 'react';
-import CelestObjects from './Celest';
+import Asteroids from './Celest';
 
 function App() {
   return (
-    <div className="App">
-      <CelestObjects />
+    <div>
+      <Asteroids />
     </div>
   );
 }
