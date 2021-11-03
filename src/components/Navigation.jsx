@@ -9,9 +9,9 @@ const Navigation = () => {
   return (
     <Nav>
       <Link to="/">
-      <Logo>
-        <img src={logo} alt="Logo Espacito" />
-      </Logo>
+        <Logo>
+          <img src={logo} alt="Logo Espacito" />
+        </Logo>
       </Link>
       <Burger onClick={() => setIsOpen(!isOpen)}>
         <span />
@@ -19,10 +19,18 @@ const Navigation = () => {
         <span />
       </Burger>
       <Menu isOpen={isOpen}>
-        <Link to="/presentationiss"><MenuLink>Présentation de l&apos;ISS</MenuLink></Link>
-        <Link to="/isstracker"><MenuLink>Tracker l&apos;ISS</MenuLink></Link>
-        <Link to="/objetscelestes"><MenuLink>Objets Célestes</MenuLink></Link>
-        <Link to="photodujour"><MenuLink>Photo du jour</MenuLink></Link>
+        <Link to="/presentationiss">
+          <MenuLink>Présentation de l&apos;ISS</MenuLink>
+        </Link>
+        <Link to="/isstracker">
+          <MenuLink>Tracker l&apos;ISS</MenuLink>
+        </Link>
+        <Link to="/objetscelestes">
+          <MenuLink>Objets Célestes</MenuLink>
+        </Link>
+        <Link to="photodujour">
+          <MenuLink>Photo du jour</MenuLink>
+        </Link>
       </Menu>
     </Nav>
   );
