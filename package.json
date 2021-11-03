@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "eslint --ext .js,.jsx --fix src/ && npx stylelint '**/*.css' --fix",
-    "lint:css":"stylelint './src/**/*.js'",
+    "lint:css": "stylelint './src/**/*.js'",
     "prettify": "pretty-quick --staged"
   },
   "eslintConfig": {
