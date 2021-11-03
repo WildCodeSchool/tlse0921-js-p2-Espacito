@@ -1,11 +1,9 @@
-# React Boilerplate with linters config
-
+# React Boilerplate with linters config  
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Installation and requirements
-
 ### Step 1 : installing the deps
 
 Start by installing the dependencies by typing `npm install` in your terminal.
@@ -15,7 +13,6 @@ Start by installing the dependencies by typing `npm install` in your terminal.
 This project comes with a set of common styling rules both for JS and CSS.
 
 To benefit from the linting, you will need to have the following extensions installed in VScode :
-
 - Prettier
 - ESLint
 - Stylelint
@@ -30,20 +27,19 @@ Once everything above is installed, reload your VScode window by pushing `ctrl +
 
 ### Pre-commits checks with Husky and Lint-staged
 
-Before each commit, linters will be launched to check your code. If your code break some linting rules, you won't be able to commit your staged files. Ensure that your codebase is clean before each commit.
+Before each commit, linters will be launched to check your code. If your code break some linting rules, you won't be able to commit your staged files. Ensure that your codebase is clean before each commit. 
 
 You can launch manually the checks with `npm run lint`
-
 ### ESLint configuration
 
 ESLint is configured to enforce an lightened version of AirBnB style rules.
 
 Here are the differences with the AirBnB rules :
-
-- Props spreading is allowed
-- No need to add `import React from 'react'` stuff
-- Missing PropTypes only returns warning
-- Enforced "one expression per line" is off
+  - Props spreading is allowed
+  - No need to add `import React from 'react'` stuff
+  - Missing PropTypes only returns warning 
+  - Enforced "one expression per line" is off
+ 
 
 ## Available Scripts
 
@@ -71,33 +67,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Organisation et sémantique du projet
-
-Tous les éléments : classes, ids, noms de composants, etc doivent être en ANGLAIS !
-
-Requête API :
-avec Axios
-Penser à installer le paquage avec "npm install axios"
-
-Composants :
-CompoName.jsx
-compoName.css
-
-Si on a besoin d'implémenter des image ou autres ressources. Créer un dossier : Assets-compoName
-
-Classes et Id :
-className='min_min'
-id='min-min'
-
-Lors de l'écriture d'un composant, voilà comment organiser le contenu avec la création d'un nouvelle section pour chaque fonctionnalité:
-
-<div>
-  <section id=''>
-  </section>
-  <section id=''>
-  </section>
-  etc...
-</div>
-
-Si nécessaire, commenter le code pour le rendre plus lisible.
