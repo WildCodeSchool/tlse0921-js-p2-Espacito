@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import presentationiss from '../ressources/assets-home/presentation-iss.png';
 import isstracker from '../ressources/assets-home/iss-tracker.png';
 import celestobjects from '../ressources/assets-home/celest-objects.png';
@@ -6,48 +7,56 @@ import pod from '../ressources/assets-home/pod.png';
 
 const Home = () => (
   <div>
-    <Title> ESPACITO</Title>
+    <Title> ESPACITO, à la découverte de l&apos;espace !</Title>
     <CardsContainer>
-      <NavLink href="/presentationiss">
-        <Cards>
-          <CardImgContainer>
-            <img src={presentationiss} alt="ISS icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Présentation de l&apos;ISS</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/isstracker">
-        <Cards>
-          <CardImgContainer>
-            <img src={isstracker} alt="Parabol icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Tracker l&apos;ISS</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/objetscelestes">
-        <Cards>
-          <CardImgContainer>
-            <img src={celestobjects} alt="Comete icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Les objets célestes</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/photodujour">
-        <Cards>
-          <CardImgContainer>
-            <img src={pod} alt="Telescope icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>L&apos;image du jour</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
+      <Link to="/presentationiss">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={presentationiss} alt="ISS icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2>Présentation de l&apos;ISS</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/isstracker">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={isstracker} alt="Parabol icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2>Tracker l&apos;ISS</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/objetscelestes">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={celestobjects} alt="Comete icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2>Les objets célestes</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/photodujour">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={pod} alt="Telescope icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2>L&apos;image du jour</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
     </CardsContainer>
   </div>
 );
@@ -107,9 +116,10 @@ const CardImgContainer = styled.div`
 
 const Title = styled.h1`
   text-align: center;
+  margin: 4rem 0;
 `;
 
-const NavLink = styled.a`
+const NavCard = styled.a`
   text-decoration: none;
   color: black;
 `;

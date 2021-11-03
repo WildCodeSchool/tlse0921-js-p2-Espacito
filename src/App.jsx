@@ -62,6 +62,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     color: black;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default App;
