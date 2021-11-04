@@ -4,11 +4,13 @@ function VideoIss() {
   return (
     <div>
       <iframe
-        src="https://ustream.tv/channel/17074538"
+        width="600"
+        height="300"
+        src="https://www.youtube.com/embed/DDU-rZs-Ic4"
+        title="YouTube video player"
         frameBorder="0"
-        allow="autoplay; encrypted-media"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        title="video"
       />
     </div>
   );

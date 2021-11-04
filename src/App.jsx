@@ -1,12 +1,10 @@
 import React from 'react';
-import MyMap from './components/Map';
-import VideoIss from './components/VideoIss';
+import IssTracker from './components/IssTracker';
 
 function App() {
   return (
     <div>
-      <MyMap />
-      <VideoIss />
+      <IssTracker />
     </div>
   );
 }
