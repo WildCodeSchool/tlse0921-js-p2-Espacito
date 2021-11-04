@@ -4,10 +4,14 @@ const PodCardStyle = styled.div`
   width: 980px;
   margin: 0 auto;
   font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
 `;
 
 const TitlePodStyle = styled.h2`
   text-align: center;
+`;
+const ParagrapheLeft = styled.p`
+  text-align: left;
 `;
 
 const SearchDate = ({ filterDate }) => (
@@ -28,7 +32,7 @@ const SearchDate = ({ filterDate }) => (
       />
     )}
     <p>{filterDate.copyright}</p>
-    <p>{filterDate.explanation}</p>
+    <ParagrapheLeft>{filterDate.explanation}</ParagrapheLeft>
   </PodCardStyle>
 );
 

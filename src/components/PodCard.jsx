@@ -4,6 +4,7 @@ const PodCardStyle = styled.div`
   width: 980px;
   margin: 0 auto;
   font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
 `;
 
 const TitlePodCardStyle = styled.h1`
@@ -12,6 +13,9 @@ const TitlePodCardStyle = styled.h1`
 
 const TitlePodStyle = styled.h2`
   text-align: center;
+`;
+const ParagrapheLeft = styled.p`
+  text-align: left;
 `;
 
 const PodCard = ({ pod }) => (
@@ -35,7 +39,7 @@ const PodCard = ({ pod }) => (
       />
     )}
     <p>{pod.copyright}</p>
-    <p>{pod.explanation}</p>
+    <ParagrapheLeft> {pod.explanation}</ParagrapheLeft>
   </PodCardStyle>
 );
 

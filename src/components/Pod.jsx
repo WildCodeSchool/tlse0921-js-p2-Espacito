@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import PodCard from './components/PodCard';
-import SearchDate from './components/SearchDate';
+import PodCard from './PodCard';
+import SearchDate from './SearchDate';
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 2em;
+  margin-bottom: 4em;
 `;
 const Button = styled.button`
   background-color: #041844;
