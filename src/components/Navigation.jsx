@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
 import logo from '../ressources/logo512.png';
@@ -7,25 +8,35 @@ const Navigation = () => {
 
   return (
     <Nav>
-      <Logo>
-        <img src={logo} alt="Logo Espacito" />
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img src={logo} alt="Logo Espacito" />
+        </Logo>
+      </Link>
       <Burger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
         <span />
       </Burger>
       <Menu isOpen={isOpen}>
-        <MenuLink>Présentation de l&apos;ISS</MenuLink>
-        <MenuLink>Tracker l&apos;ISS</MenuLink>
-        <MenuLink>Objets Célestes</MenuLink>
-        <MenuLink>Photo du jour</MenuLink>
+        <Link to="/presentationiss">
+          <MenuLink>Présentation de l&apos;ISS</MenuLink>
+        </Link>
+        <Link to="/isstracker">
+          <MenuLink>Tracker l&apos;ISS</MenuLink>
+        </Link>
+        <Link to="/objetscelestes">
+          <MenuLink>Objets Célestes</MenuLink>
+        </Link>
+        <Link to="photodujour">
+          <MenuLink>Photo du jour</MenuLink>
+        </Link>
       </Menu>
     </Nav>
   );
 };
 
-const Nav = styled.div`
+const Nav = styled.nav`
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
@@ -64,6 +75,7 @@ const MenuLink = styled.div`
   color: white;
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
+  font-family: 'Audiowide', cursive;
 
   &:hover {
     color: #7b7fda;
