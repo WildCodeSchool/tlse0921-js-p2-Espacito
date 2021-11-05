@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
-import NeoCard from './components/NeoCard';
 
 function Asteroids() {
+  // eslint-disable-next-line no-unused-vars
   const [asteroids, setAsteroids] = useState([]);
   axios
     .get(
@@ -13,22 +13,7 @@ function Asteroids() {
       setAsteroids(data);
     });
 
-  return (
-    <div>
-      {asteroids.map((objets) => (
-        <NeoCard
-          name={objets.name}
-          id={objets.id}
-          close_approach_date_full={
-            objets.close_approach_data[0].close_approach_date_full
-          }
-          is_potentially_hazardous_asteroid={
-            objets.is_potentially_hazardous_asteroid ? 'true' : 'false'
-          }
-        />
-      ))}
-    </div>
-  );
+  return <div>asteroids</div>;
 }
 
 export default Asteroids;
