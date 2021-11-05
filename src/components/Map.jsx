@@ -9,6 +9,15 @@ import issIcon from '../iss-icon.png';
 const MyMap = () => {
   const [lat, setLat] = useState(0);
   const [lng, setLng] = useState(0);
+  const [coords, setCoords] = useState([0, 0]);
+
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setCoords([position.coords.latitude, position.coords.longitude]);
+      });
+    }
+  }, []);
   // let map = L.map('map').setView([lat, lng], 6);
   const getISS = () => {
     axios
@@ -37,7 +46,7 @@ const MyMap = () => {
     return () => clearInterval(int);
   }, []);
   return (
-    <div>
+    <divMap>
       <MapContainer
         style={{ height: '500px', width: '600px' }}
         center={[lat, lng]}
@@ -52,8 +61,16 @@ const MyMap = () => {
         <Marker position={[lat, lng]} icon={myIcon}>
           <Popup>This is the ISS station</Popup>
         </Marker>
+        <Marker position={coords}>
+          <Popup>This is you</Popup>
+        </Marker>
       </MapContainer>
-    </div>
+    </divMap>
   );
 };
+
+// const divMap = styled.div`
+//   display: flex;
+// `;
+
 export default MyMap;
