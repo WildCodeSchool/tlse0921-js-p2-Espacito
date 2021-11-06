@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import {
   TileLayer, Marker, Popup, MapContainer,
 } from 'react-leaflet';
 import L from 'leaflet';
 import axios from 'axios';
 import issIcon from '../iss-icon.png';
+import CalculDist from './CalculDist';
 
 const MyMap = () => {
   const [lat, setLat] = useState(0);
   const [lng, setLng] = useState(0);
-  const [coords, setCoords] = useState([0, 0]);
+  const [latGeoloc, setLatGeoloc] = useState(0);
+  const [lngGeoloc, setLngGeoloc] = useState(0);
 
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        setCoords([position.coords.latitude, position.coords.longitude]);
+        setLatGeoloc(parseInt(position.coords.latitude, 10));
+        setLngGeoloc(parseInt(position.coords.longitude, 10));
       });
     }
   }, []);
-  // let map = L.map('map').setView([lat, lng], 6);
   const getISS = () => {
     axios
       .get('http://api.open-notify.org/iss-now.json')
       .then((res) => res.data)
       .then((data) => {
-        setLat(data.iss_position.latitude);
-        setLng(data.iss_position.longitude);
+        setLat(parseInt(data.iss_position.latitude, 10));
+        setLng(parseInt(data.iss_position.longitude, 10));
       });
   };
   // async function getISS() {
@@ -45,9 +48,10 @@ const MyMap = () => {
     const int = setInterval(getISS, 10000);
     return () => clearInterval(int);
   }, []);
+  // CalculDist(lngGeoloc, lng, latGeoloc, lat);
   return (
-    <divMap>
-      <MapContainer
+    <DivMap>
+      <MapCont
         style={{ height: '500px', width: '600px' }}
         center={[lat, lng]}
         zoom={1}
@@ -61,16 +65,21 @@ const MyMap = () => {
         <Marker position={[lat, lng]} icon={myIcon}>
           <Popup>This is the ISS station</Popup>
         </Marker>
-        <Marker position={coords}>
+        <Marker position={[latGeoloc, lngGeoloc]}>
           <Popup>This is you</Popup>
         </Marker>
-      </MapContainer>
-    </divMap>
+      </MapCont>
+      <div>{CalculDist(lng, lngGeoloc, lat, latGeoloc)}</div>
+    </DivMap>
   );
 };
 
-// const divMap = styled.div`
-//   display: flex;
-// `;
+const DivMap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const MapCont = styled(MapContainer)`
+  margin: auto;
+`;
 
 export default MyMap;

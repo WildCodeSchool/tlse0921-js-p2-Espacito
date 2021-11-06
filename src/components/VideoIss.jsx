@@ -1,11 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
 function VideoIss() {
   return (
     <div>
-      <iframe
+      <DirectVideo
         width="600"
-        height="300"
+        height="337"
         src="https://www.youtube.com/embed/DDU-rZs-Ic4"
         title="YouTube video player"
         frameBorder="0"
@@ -15,5 +16,9 @@ function VideoIss() {
     </div>
   );
 }
+
+const DirectVideo = styled.iframe`
+  max-width: 90%;
+`;
 
 export default VideoIss;
