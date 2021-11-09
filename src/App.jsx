@@ -8,6 +8,7 @@ import CelestObjects from './components/CelestObjects';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
+import ApiTeamISS from './components/ApiTeamISS';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Ressources />
           </Route>
         </Switch>
+        <ApiTeamISS />
         <div>
           <Footer />
         </div>
