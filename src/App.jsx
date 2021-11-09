@@ -7,7 +7,7 @@ import IssTracker from './components/IssTracker';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
-import Asteroids from './Celest';
+import Asteroids from './components/Neo';
 
 function App() {
   return (
