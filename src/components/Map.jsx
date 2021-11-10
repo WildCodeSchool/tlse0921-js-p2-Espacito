@@ -8,12 +8,6 @@ import issIcon from '../iss-icon.png';
 const MyMap = ({
   lat, lng, latGeoloc, lngGeoloc,
 }) => {
-  // async function getISS() {
-  //   const res = await fetch('http://api.open-notify.org/iss-now.json');
-  //   const data = await res.json();
-  //   setLat(data.iss_position.latitude);
-  //   setLng(data.iss_position.longitude);
-  // }
   const myIcon = new L.Icon({
     iconUrl: issIcon,
     iconRetinaUrl: issIcon,
@@ -24,7 +18,7 @@ const MyMap = ({
     <DivMap>
       <MapCont
         style={{ height: '500px', width: '600px' }}
-        center={[lat, lng]}
+        center={[0, 0]}
         zoom={1}
         scroollWheelZoom={false}
       >

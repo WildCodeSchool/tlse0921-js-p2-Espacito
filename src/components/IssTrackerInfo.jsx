@@ -49,9 +49,10 @@ const IssCardInfo = ({ distance }) => {
 };
 
 const CardInfo = styled.div`
-  max-width: 40%;
+  /* max-width: 40%; */
   display: flex;
   flex-flow: column wrap;
+  width: 90%;
 `;
 const InfoList = styled.ul`
   list-style: none;

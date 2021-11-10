@@ -5,7 +5,7 @@ function VideoIss() {
   return (
     <div>
       <DirectVideo
-        width="600"
+        width="1000"
         height="337"
         src="https://www.youtube.com/embed/DDU-rZs-Ic4"
         title="YouTube video player"
