@@ -1,8 +1,17 @@
 import styled from 'styled-components';
-import presentationiss from '../ressources/assets-home/presentation-iss.png';
 
 const NeoCard = ({ asteroid }) => {
   const newAsteroidName = asteroid.name.replace(/[(]|[)]/g, '');
+  const asteroidMaxDiameter = Math.floor(
+    asteroid.estimated_diameter.meters.estimated_diameter_max,
+  );
+  const asteroidComparedImage = () => {
+    let url = null;
+    if (asteroidMaxDiameter < 700) {
+      url = 'https://static.actu.fr/uploads/2019/06/25234-190613143947629-0-960x640.jpg';
+    }
+    return url;
+  };
   return (
     <AsteroidsCards>
       <CardContent>
@@ -47,7 +56,7 @@ const NeoCard = ({ asteroid }) => {
           </AsteroidInfo>
           <AsteroidSizeCompare>
             <TitleH3> Taille comparative</TitleH3>
-            <AsteroidImageSizeCompare src={presentationiss} alt="" />
+            <AsteroidImageSizeCompare src={asteroidComparedImage()} alt="" />
           </AsteroidSizeCompare>
         </AsteroidContents>
       </CardContent>
@@ -59,6 +68,14 @@ const AsteroidsCards = styled.div`
   @media (min-width: 768px) {
     width: 45%;
   }
+`;
+
+const TitleH2 = styled.h2`
+  text-align: center;
+`;
+
+const TitleH3 = styled.h3`
+  text-align: center;
 `;
 
 const CardContent = styled.div`
@@ -87,14 +104,12 @@ const AsteroidContents = styled.div`
 const AsteroidInfo = styled.div`
   display: flex;
   flex-direction: column;
-`;
 
-const TitleH2 = styled.h2`
-  text-align: center;
-`;
-
-const TitleH3 = styled.h3`
-  text-align: center;
+  @media (min-width: 768px) {
+    align-items: flex-start;
+    min-width: 40%;
+    margin-right: 5rem;
+  }
 `;
 
 const AsteroidSizeCompare = styled.div`
@@ -103,13 +118,13 @@ const AsteroidSizeCompare = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    align-items: flex-end;
+    align-items: center;
     width: 40%;
   }
 `;
 
 const AsteroidImageSizeCompare = styled.img`
-  width: 60%;
+  width: 80%;
 `;
 
 export default NeoCard;
