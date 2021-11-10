@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import logo from '../ressources/logo512.png';
 import facebook from '../ressources/assets-footer/facebook.png';
 import twitter from '../ressources/assets-footer/twitter.png';
@@ -9,11 +10,18 @@ const Footer = () => (
   <FooterContainer>
     <FooterRow>
       <FirstRow>
-        <a href="/ressources">
+        <Link to="/ressources">
           <h3>Ressources</h3>
-        </a>
-        <a href="/team">
+        </Link>
+        <Link to="/team">
           <h3>Team</h3>
+        </Link>
+        <a
+          href="https://shielded-earth-94641.herokuapp.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h3>Le système solaire</h3>
         </a>
       </FirstRow>
       <SecondRow>

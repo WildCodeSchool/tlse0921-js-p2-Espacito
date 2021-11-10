@@ -1,4 +1,4 @@
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
 import logo from '../ressources/logo512.png';
@@ -75,6 +75,7 @@ const MenuLink = styled.div`
   color: white;
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
+  font-family: 'Audiowide', cursive;
 
   &:hover {
     color: #7b7fda;
