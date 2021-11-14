@@ -5,7 +5,7 @@ import {
 import L from 'leaflet';
 import issIcon from '../iss-icon.png';
 
-const MyMap = ({
+const Map = ({
   lat, lng, latGeoloc, lngGeoloc,
 }) => {
   const myIcon = new L.Icon({
@@ -16,10 +16,11 @@ const MyMap = ({
   });
   return (
     <DivMap>
+      <Title>Tracker l&apos;ISS</Title>
       <MapCont
-        style={{ height: '500px', width: '600px' }}
+        // style={{ height: '550px', width: '1200px' }}
         center={[0, 0]}
-        zoom={1}
+        zoom={2}
         scroollWheelZoom={false}
       >
         <TileLayer
@@ -39,11 +40,17 @@ const MyMap = ({
 };
 
 const DivMap = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: block;
 `;
 const MapCont = styled(MapContainer)`
+  height: 550px;
+  width: 100%;
   margin: auto;
 `;
+const Title = styled.h2`
+  color: #041844;
+  margin: 1em;
+  text-align: center;
+`;
 
-export default MyMap;
+export default Map;

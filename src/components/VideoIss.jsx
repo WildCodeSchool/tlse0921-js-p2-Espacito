@@ -3,22 +3,32 @@ import styled from 'styled-components';
 
 function VideoIss() {
   return (
-    <div>
+    <VideoCard>
+      <Title>L&apos;ISS en direct</Title>
       <DirectVideo
         width="1000"
-        height="337"
+        height="460"
         src="https://www.youtube.com/embed/DDU-rZs-Ic4"
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
-    </div>
+    </VideoCard>
   );
 }
-
+const VideoCard = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Title = styled.h2`
+  color: #041844;
+  margin: 1em;
+  text-align: center;
+`;
 const DirectVideo = styled.iframe`
   max-width: 90%;
+  margin: auto;
 `;
 
 export default VideoIss;
