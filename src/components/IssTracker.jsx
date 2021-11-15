@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import Map from './Map';
 import VideoIss from './VideoIss';
 import IssCardInfo from './IssTrackerInfo';
 import CalculDist from './CalculDist';
+import ButtonsSwitch from './ButtonsSwitch';
 
 function IssTracker() {
   const [latIss, setLatIss] = useState(0);
@@ -16,8 +18,8 @@ function IssTracker() {
   const [risetime, setRisetime] = useState(0);
 
   const [mapIss, setMapIss] = useState(true);
-  const [info, setInfo] = useState(true);
-  const [videoIss, setVideoIss] = useState(true);
+  const [info, setInfo] = useState(false);
+  const [videoIss, setVideoIss] = useState(false);
 
   useEffect(() => {
     axios
@@ -58,56 +60,41 @@ function IssTracker() {
 
   return (
     <DivIssTracker>
-      <ButtonsDiv>
-        <Button
-          type="button"
-          onClick={() => {
-            setMapIss(true);
-            setInfo(false);
-            setVideoIss(false);
-          }}
-        >
-          Carte de l&apos;ISS
-        </Button>
-        <Button
-          type="button"
-          onClick={() => {
-            setMapIss(false);
-            setInfo(true);
-            setVideoIss(false);
-          }}
-        >
-          Informations
-        </Button>
-        <Button
-          type="button"
-          onClick={() => {
-            setMapIss(false);
-            setInfo(false);
-            setVideoIss(true);
-          }}
-        >
-          Vidéo en direct
-        </Button>
-      </ButtonsDiv>
-      {mapIss ? (
+      {/* <Router> */}
+      <ButtonsSwitch
+        setMapIss={setMapIss}
+        setInfo={setInfo}
+        setVideoIss={setVideoIss}
+      />
+      {/* <Switch> */}
+      {/* <Route path="/isstracker/map" exact component={Map}> */}
+      <CardContainer show={mapIss}>
         <Map
           lat={latIss}
           lng={lngIss}
           latGeoloc={latGeoloc}
           lngGeoloc={lngGeoloc}
         />
-      ) : null}
+      </CardContainer>
+      {/* </Route> */}
       <InfoAndVideo>
-        {info ? (
+        {/* <Route path="/isstracker/informations" exact component={IssCardInfo}> */}
+        <CardContainer show={info}>
           <IssCardInfo
             distance={CalculDist(lngIss, lngGeoloc, latIss, latGeoloc)}
             risetime={risetime}
             duration={duration}
           />
-        ) : null}
-        {videoIss ? <VideoIss /> : null}
+        </CardContainer>
+        {/* </Route> */}
+        {/* <Route path="/isstracker/video" exact component={VideoIss}> */}
+        <CardContainer show={videoIss}>
+          <VideoIss />
+        </CardContainer>
+        {/* </Route> */}
       </InfoAndVideo>
+      {/* </Switch> */}
+      {/* </Router> */}
     </DivIssTracker>
   );
 }
@@ -133,25 +120,10 @@ const InfoAndVideo = styled.div`
     margin: auto;
   }
 `;
-const Button = styled.button`
-  background-color: #041844;
-  display: flex;
-  color: #fff;
-  align-items: center;
-  padding: 10px;
-  border: solid black;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  width: 33%;
-  text-align: center;
-`;
-const ButtonsDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 
-  @media (min-width: 768px) {
-    display: none;
+const CardContainer = styled.div`
+  @media (max-width: 768px) {
+    display: ${(props) => (props.show ? 'block' : 'none')};
   }
 `;
 

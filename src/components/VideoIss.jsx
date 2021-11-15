@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+// import {link} from 'react-router-dom';
 
 function VideoIss() {
   return (
     <VideoCard>
       <Title>L&apos;ISS en direct</Title>
       <DirectVideo
-        width="1000"
+        width="900"
         height="460"
         src="https://www.youtube.com/embed/DDU-rZs-Ic4"
         title="YouTube video player"
@@ -20,6 +21,7 @@ function VideoIss() {
 const VideoCard = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 const Title = styled.h2`
   color: #041844;

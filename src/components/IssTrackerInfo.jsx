@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+// import {link} from 'react-router-dom';
 
 const IssCardInfo = ({ distance, risetime, duration }) => {
   const [velocity, setVelocity] = useState(0);
@@ -80,7 +81,7 @@ const IssCardInfo = ({ distance, risetime, duration }) => {
 
 const CardInfo = styled.div`
   @media (min-width: 768px) {
-    width: 50%;
+    width: 100%;
   }
 `;
 const Title = styled.h2`

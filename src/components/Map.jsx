@@ -4,6 +4,8 @@ import {
 } from 'react-leaflet';
 import L from 'leaflet';
 import issIcon from '../iss-icon.png';
+import LocationMarker from './MapCenter';
+// import {link} from 'react-router-dom';
 
 const Map = ({
   lat, lng, latGeoloc, lngGeoloc,
@@ -17,12 +19,7 @@ const Map = ({
   return (
     <DivMap>
       <Title>Tracker l&apos;ISS</Title>
-      <MapCont
-        // style={{ height: '550px', width: '1200px' }}
-        center={[0, 0]}
-        zoom={2}
-        scroollWheelZoom={false}
-      >
+      <MapCont center={[lat, lng]} zoom={4} scroollWheelZoom={false}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a
@@ -34,6 +31,7 @@ const Map = ({
         <Marker position={[latGeoloc, lngGeoloc]}>
           <Popup>Vous êtes ici !</Popup>
         </Marker>
+        <LocationMarker />
       </MapCont>
     </DivMap>
   );
