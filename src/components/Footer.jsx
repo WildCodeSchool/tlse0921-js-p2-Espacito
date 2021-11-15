@@ -73,6 +73,7 @@ const FooterContainer = styled.section`
   h3 {
     margin: 0;
     font-size: 2rem;
+    text-align: center;
   }
 
   @media (min-width: 768px) {
