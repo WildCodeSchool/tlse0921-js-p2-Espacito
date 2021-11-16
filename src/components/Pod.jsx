@@ -77,7 +77,7 @@ function Pod() {
   return (
     <div>
       {!showCard ? <PodCard pod={pod} /> : null}
-      <TitleTwo>Personnalisez votre image </TitleTwo>
+      <TitleTwo>Personnalisez votre image</TitleTwo>
       <Container>
         <input
           id="filter-date"
