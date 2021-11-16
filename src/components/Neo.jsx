@@ -5,9 +5,13 @@ import NeoCard from './NeoCard';
 
 function Asteroids() {
   const [asteroids, setAsteroids] = useState([]);
+  const [IsFilteredAsteroids, setIsFilterderAsteroids] = useState(false);
   const [prev, setPrev] = useState(0);
   const [next, setNext] = useState(6);
   const mergeAsteroids = (carry, current) => [...carry, ...current];
+  const handleOnClick = () => {
+    setIsFilterderAsteroids(!IsFilteredAsteroids);
+  };
   const prevAsteroids = () => {
     if (prev !== 0) {
       setPrev(prev - 6);
@@ -34,11 +38,32 @@ function Asteroids() {
   return (
     <CelestObjectsContent>
       <TitleH1>Objets célestes</TitleH1>
-      <AsteroidsCards>
-        {asteroids.slice(prev, next).map((asteroid) => (
-          <NeoCard asteroid={asteroid} />
-        ))}
-      </AsteroidsCards>
+      <NavButtons>
+        <NavButton type="button" onClick={handleOnClick}>
+          Afficher les comètes les plus dangereuses
+        </NavButton>
+        <NavButton type="button" onClick={handleOnClick}>
+          Afficher les comètes les plus grandes
+        </NavButton>
+      </NavButtons>
+      {IsFilteredAsteroids ? (
+        <AsteroidsCards>
+          {asteroids
+            .filter(
+              (el) => el.estimated_diameter.meters.estimated_diameter_max > 650,
+            )
+            .slice(prev, next)
+            .map((asteroid) => (
+              <NeoCard asteroid={asteroid} />
+            ))}
+        </AsteroidsCards>
+      ) : (
+        <AsteroidsCards>
+          {asteroids.slice(prev, next).map((asteroid) => (
+            <NeoCard asteroid={asteroid} />
+          ))}
+        </AsteroidsCards>
+      )}
       <NavButtons>
         <NavButton type="button" onClick={prevAsteroids}>
           Voir les astéroïdes précédents
