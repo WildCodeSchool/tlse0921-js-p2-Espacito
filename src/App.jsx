@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Navigation from './components/Navigation';
-
 import PresentationIss from './components/PresentationIss';
 import IssTracker from './components/IssTracker';
 import CelestObjects from './components/CelestObjects';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
-import Astronauts from './components/Astronauts';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path="/">
-            <Astronauts />
+            <Home />
           </Route>
           <Route path="/presentationiss">
             <PresentationIss />

@@ -20,9 +20,11 @@ const AstroModal = ({
             <h1>{name}</h1>
             <h2>{country}</h2>
             <h2>{agency}</h2>
-            <p>{position}</p>
-            <p>{spacecraft}</p>
-            <p>{url}</p>
+            <h2>{position}</h2>
+            <h2>{spacecraft}</h2>
+            <Wikibutton>
+              <a href={url}>Lien Wikipédia</a>
+            </Wikibutton>
           </ModalContent>
           <CloseModalButton
             aria-label="Close modal"
@@ -42,14 +44,14 @@ const Background = styled.div`
   height: 100%;
   background: rgba(0 0 0 /80%);
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const ModalWrapper = styled.div`
-  width: 800px;
-  height: 500px;
+  width: 50%;
   box-shadow: 0 5px 16px rgba(0 0 0 /20%);
   background: #fff;
   color: #000;
@@ -72,7 +74,7 @@ const ModalContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 1.8;
+  line-height: 3;
   color: #141414;
 
   p {
@@ -87,6 +89,26 @@ const ModalContent = styled.div`
   }
 `;
 
+const Wikibutton = styled.button`
+  min-width: 100px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  background: #041844ff;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7b7fda;
+    color: #041844ff;
+  }
+
+  a {
+    color: #fff;
+  }
+`;
+
 const CloseModalButton = styled.button`
   cursor: pointer;
   position: absolute;
@@ -97,6 +119,8 @@ const CloseModalButton = styled.button`
   padding: 0;
   z-index: 10;
   font-size: 25px;
+  border: none;
+  background-color: #fff;
 `;
 
 const AstroModalStyle = createGlobalStyle`
@@ -104,7 +128,7 @@ const AstroModalStyle = createGlobalStyle`
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 4px;
     }
   `;
 

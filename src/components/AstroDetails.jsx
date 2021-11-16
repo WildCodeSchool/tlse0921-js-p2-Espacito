@@ -19,7 +19,6 @@ const AstroDetails = ({ astronaut }) => {
           height="300"
         />
         <h3>{astronaut.country}</h3>
-        <h3>{astronaut.position}</h3>
         <Button onClick={openModal}>Plus d&apos;infos</Button>
       </Container>
       <AstroModal
@@ -43,8 +42,9 @@ const Container = styled.div`
   border: solid black;
   border-width: 3px 4px 3px 5px;
   border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 15px 15px 35px;
+  margin: 30px 0;
+  min-width: 400px;
 `;
 
 const Button = styled.button`

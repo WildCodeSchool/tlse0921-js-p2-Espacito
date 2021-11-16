@@ -1,20 +1,20 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import AstroDetails from './AstroDetails';
 
 function Astronauts() {
   const [astros, setAstros] = useState([]);
-
-  axios
-    .get(
-      'https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json',
-    )
-    .then((response) => response.data)
-    .then((response) => {
-      setAstros(response.people);
-    });
-
+  useEffect(() => {
+    axios
+      .get(
+        'https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json',
+      )
+      .then((response) => response.data)
+      .then((response) => {
+        setAstros(response.people);
+      });
+  }, []);
   return (
     <div>
       <Title>
@@ -37,13 +37,15 @@ const Title = styled.div`
 
 const Container = styled.div`
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
 
   @media (max-width: 1271px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 200px;
   }
 `;
 

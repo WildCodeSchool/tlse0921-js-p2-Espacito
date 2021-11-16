@@ -1,6 +1,8 @@
+import Astronauts from './Astronauts';
+
 const PresentationIss = () => (
   <div>
-    <h1>Présentation de ISS</h1>
+    <Astronauts />
   </div>
 );
 export default PresentationIss;
