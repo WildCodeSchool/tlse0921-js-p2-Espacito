@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import Map from './Map';
@@ -60,14 +59,14 @@ function IssTracker() {
 
   return (
     <DivIssTracker>
-      {/* <Router> */}
       <ButtonsSwitch
+        butMap={mapIss}
+        butInfo={info}
+        butVideo={videoIss}
         setMapIss={setMapIss}
         setInfo={setInfo}
         setVideoIss={setVideoIss}
       />
-      {/* <Switch> */}
-      {/* <Route path="/isstracker/map" exact component={Map}> */}
       <CardContainer show={mapIss}>
         <Map
           lat={latIss}
@@ -76,9 +75,7 @@ function IssTracker() {
           lngGeoloc={lngGeoloc}
         />
       </CardContainer>
-      {/* </Route> */}
       <InfoAndVideo>
-        {/* <Route path="/isstracker/informations" exact component={IssCardInfo}> */}
         <CardContainer show={info}>
           <IssCardInfo
             distance={CalculDist(lngIss, lngGeoloc, latIss, latGeoloc)}
@@ -86,15 +83,10 @@ function IssTracker() {
             duration={duration}
           />
         </CardContainer>
-        {/* </Route> */}
-        {/* <Route path="/isstracker/video" exact component={VideoIss}> */}
         <CardContainer show={videoIss}>
           <VideoIss />
         </CardContainer>
-        {/* </Route> */}
       </InfoAndVideo>
-      {/* </Switch> */}
-      {/* </Router> */}
     </DivIssTracker>
   );
 }
@@ -103,7 +95,7 @@ const DivIssTracker = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto 2em;
 
   @media (min-width: 768px) {
     width: 90%;

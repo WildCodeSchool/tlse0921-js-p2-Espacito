@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-// import {link} from 'react-router-dom';
 
 const IssCardInfo = ({ distance, risetime, duration }) => {
   const [velocity, setVelocity] = useState(0);

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import {link} from 'react-router-dom';
 
 function VideoIss() {
   return (
@@ -29,8 +28,9 @@ const Title = styled.h2`
   text-align: center;
 `;
 const DirectVideo = styled.iframe`
-  max-width: 90%;
+  max-width: 95%;
   margin: auto;
+  border-radius: 10px;
 `;
 
 export default VideoIss;
