@@ -72,6 +72,7 @@ const PresentationIss = () => (
     </Hero>
     <Container>
       <div>
+        <h2>Configuration de l`ISS</h2>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
           voluptatibus id, in et neque nisi sapiente aperiam eum vitae quidem
