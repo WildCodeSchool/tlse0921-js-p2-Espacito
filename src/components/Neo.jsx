@@ -30,7 +30,7 @@ function Asteroids() {
         setAsteroids(celestObjects);
       });
   }, []);
-
+  
   return (
     <CelestObjectsContent>
       <TitleH1>Objets célestes</TitleH1>
@@ -48,6 +48,7 @@ function Asteroids() {
         </NavButton>
       </NavButtons>
     </CelestObjectsContent>
+
   );
 }
 
