@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import presentationiss from '../ressources/assets-home/presentation-iss.png';
 import isstracker from '../ressources/assets-home/iss-tracker.png';
 import celestobjects from '../ressources/assets-home/celest-objects.png';
-import pod from '../ressources/assets-home/pod.png';
+import podIcone from '../ressources/assets-home/podIcone.png';
 
 const Home = () => (
   <div>
@@ -49,7 +49,7 @@ const Home = () => (
         <NavCard>
           <Cards>
             <CardImgContainer>
-              <img src={pod} alt="Telescope icone" />
+              <img src={podIcone} alt="Telescope icone" />
             </CardImgContainer>
             <cardTitle>
               <h2>L&apos;image du jour</h2>
