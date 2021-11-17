@@ -23,7 +23,9 @@ const AstroModal = ({
             <h2>{position}</h2>
             <h2>{spacecraft}</h2>
             <Wikibutton>
-              <a href={url}>Lien Wikipédia</a>
+              <a href={url} target="_blank" rel="noreferrer">
+                Lien Wikipédia
+              </a>
             </Wikibutton>
           </ModalContent>
           <CloseModalButton
@@ -60,6 +62,12 @@ const ModalWrapper = styled.div`
   position: relative;
   z-index: 10;
   border-radius: 10px;
+
+  @media (max-width: 1271px) {
+    width: 100%;
+    margin: 0 5px;
+    text-align: center;
+  }
 `;
 
 const ModalImg = styled.img`
@@ -87,6 +95,11 @@ const ModalContent = styled.div`
     color: #fff;
     border: none;
   }
+
+  @media (max-width: 1271px) {
+    line-height: 1.5;
+    font-size: 11px;
+  }
 `;
 
 const Wikibutton = styled.button`
@@ -107,6 +120,11 @@ const Wikibutton = styled.button`
   a {
     color: #fff;
   }
+
+  @media (max-width: 1271px) {
+    margin: 5px;
+    font-size: 15px;
+  }
 `;
 
 const CloseModalButton = styled.button`
@@ -121,6 +139,12 @@ const CloseModalButton = styled.button`
   font-size: 25px;
   border: none;
   background-color: #fff;
+
+  @media (max-width: 1271px) {
+    top: 0;
+    right: 0;
+    font-size: 15px;
+  }
 `;
 
 const AstroModalStyle = createGlobalStyle`

@@ -44,7 +44,7 @@ const Container = styled.div`
 
   @media (max-width: 1271px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row wrap;
     align-items: center;
   }
 `;

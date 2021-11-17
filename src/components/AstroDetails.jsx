@@ -38,13 +38,25 @@ const AstroDetails = ({ astronaut }) => {
 
 const Container = styled.div`
   text-align: center;
-  background-color: #c8ced6;
+  background-color: #041844ff;
+  color: white;
   border: solid black;
   border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  border-radius: 51px;
   padding: 15px 15px 35px;
   margin: 30px 0;
   min-width: 400px;
+
+  h2,
+  h3 {
+    color: white;
+  }
+
+  @media (max-width: 1271px) {
+    padding: 5px;
+    margin: 10px;
+    min-width: 300px;
+  }
 `;
 
 const Button = styled.button`
@@ -52,13 +64,19 @@ const Button = styled.button`
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
-  background: #041844ff;
-  color: white;
+  background: white;
+  color: #041844ff;
   font-size: 20px;
   cursor: pointer;
 
   &:hover {
     background-color: #7b7fda;
+    color: #041844ff;
+  }
+
+  @media (max-width: 1271px) {
+    margin-bottom: 10px;
+    color: #7b7fda;
     color: #041844ff;
   }
 `;
