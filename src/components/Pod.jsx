@@ -25,6 +25,12 @@ const TitleTwo = styled.h2`
   margin-top: 2em;
   text-align: center;
 `;
+const Filter = styled.div`
+  @media (max-width: 1024px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+`;
 
 function Pod() {
   const [pod, setPod] = useState(true);
@@ -36,7 +42,7 @@ function Pod() {
       .then((res) => res.data)
       .then((data) => ({
         copyright: data.copyright,
-        date: data.date,
+        date: data.date.split('-').reverse().join('-'),
         explanation: data.explanation,
         image: data.url,
         title: data.title,
@@ -77,25 +83,27 @@ function Pod() {
   return (
     <div>
       {!showCard ? <PodCard pod={pod} /> : null}
-      <TitleTwo>Personnalisez votre image</TitleTwo>
-      <Container>
-        <input
-          id="filter-date"
-          type="date"
-          value={filterDate}
-          onChange={(e) => setFilterDate(e.target.value)}
-        />
+      <TitleTwo>Personnalisez votre image </TitleTwo>
+      <Filter>
+        <Container>
+          <input
+            id="filter-date"
+            type="date"
+            value={filterDate}
+            onChange={(e) => setFilterDate(e.target.value)}
+          />
 
-        <Button
-          type="button"
-          onClick={() => {
-            handleFilterDate();
-            hidePodCard();
-          }}
-        >
-          Découvrir la photo personnalisée
-        </Button>
-      </Container>
+          <Button
+            type="button"
+            onClick={() => {
+              handleFilterDate();
+              hidePodCard();
+            }}
+          >
+            Découvrir la photo personnalisée
+          </Button>
+        </Container>
+      </Filter>
       {showCard ? <SearchDate filterDate={filterDate} /> : null}
     </div>
   );

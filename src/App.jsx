@@ -1,9 +1,8 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Navigation from './components/Navigation';
 import PresentationIss from './components/PresentationIss';
-import IssTracker from './components/IssTracker';
-import CelestObjects from './components/CelestObjects';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
@@ -22,18 +21,15 @@ function App() {
           <Route path="/presentationiss">
             <PresentationIss />
           </Route>
-          <Route path="/isstracker">
-            <IssTracker />
-          </Route>
-          <Route path="/objetscelestes">
-            <CelestObjects />
-          </Route>
+          <Route path="/isstracker" />
+          <Route path="/objetscelestes" />
           <Route path="/photodujour">
             <Pod />
           </Route>
           <Route path="/ressources">
             <Ressources />
           </Route>
+          <Route path="/flappiss" />
         </Switch>
         <div>
           <Footer />
