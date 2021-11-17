@@ -13,7 +13,7 @@ const AstroModal = ({
 }) => (
   <>
     {showModal ? (
-      <BackgroundModal>
+      <BackgroundModal onClick={() => setShowModal(false)}>
         <ModalWrapper showModal={showModal}>
           <ModalImage src={image} alt={name} />
           <ModalContent>
