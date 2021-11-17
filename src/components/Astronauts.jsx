@@ -20,13 +20,13 @@ function Astronauts() {
       <Title>
         <h1>Equipage de l&apos;ISS</h1>
       </Title>
-      <Container>
+      <Astrocontainer>
         {astros
           .filter((onIss) => onIss.iss === true)
           .map((astronaut) => (
             <AstroDetails astronaut={astronaut} />
           ))}
-      </Container>
+      </Astrocontainer>
     </div>
   );
 }
@@ -35,7 +35,7 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const Container = styled.div`
+const Astrocontainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;

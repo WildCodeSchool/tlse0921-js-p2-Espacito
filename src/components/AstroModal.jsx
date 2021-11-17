@@ -13,9 +13,9 @@ const AstroModal = ({
 }) => (
   <>
     {showModal ? (
-      <Background>
+      <BackgroundModal>
         <ModalWrapper showModal={showModal}>
-          <ModalImg src={image} alt={name} />
+          <ModalImage src={image} alt={name} />
           <ModalContent>
             <h1>{name}</h1>
             <h2>{country}</h2>
@@ -36,12 +36,12 @@ const AstroModal = ({
           </CloseModalButton>
         </ModalWrapper>
         <AstroModalStyle />
-      </Background>
+      </BackgroundModal>
     ) : null}
   </>
 );
 
-const Background = styled.div`
+const BackgroundModal = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0 0 0 /80%);
@@ -70,7 +70,7 @@ const ModalWrapper = styled.div`
   }
 `;
 
-const ModalImg = styled.img`
+const ModalImage = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 10px 0 0 10px;

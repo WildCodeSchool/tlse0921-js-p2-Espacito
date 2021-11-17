@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import AstroModal from './AstroModal';
+import Button from './Button';
 
 const AstroDetails = ({ astronaut }) => {
   const [showModal, setShowModal] = useState(false);
@@ -10,7 +11,7 @@ const AstroDetails = ({ astronaut }) => {
 
   return (
     <>
-      <Container>
+      <Cardcontainer>
         <h2>{astronaut.name}</h2>
         <img
           src={astronaut.image}
@@ -19,8 +20,17 @@ const AstroDetails = ({ astronaut }) => {
           height="300"
         />
         <h3>{astronaut.country}</h3>
-        <Button onClick={openModal}>Plus d&apos;infos</Button>
-      </Container>
+        <Button
+          onClick={openModal}
+          colorButton="white"
+          textButton="#041844ff"
+          fontSize="20px"
+          minWidth="100px"
+          paddingButton="16px 32px"
+        >
+          Plus d&apos;infos
+        </Button>
+      </Cardcontainer>
       <AstroModal
         showModal={showModal}
         setShowModal={setShowModal}
@@ -36,7 +46,7 @@ const AstroDetails = ({ astronaut }) => {
   );
 };
 
-const Container = styled.div`
+const Cardcontainer = styled.div`
   text-align: center;
   background-color: #041844ff;
   color: white;
@@ -56,28 +66,6 @@ const Container = styled.div`
     padding: 5px;
     margin: 10px;
     min-width: 300px;
-  }
-`;
-
-const Button = styled.button`
-  min-width: 100px;
-  padding: 16px 32px;
-  border-radius: 4px;
-  border: none;
-  background: white;
-  color: #041844ff;
-  font-size: 20px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #7b7fda;
-    color: #041844ff;
-  }
-
-  @media (max-width: 1271px) {
-    margin-bottom: 10px;
-    color: #7b7fda;
-    color: #041844ff;
   }
 `;
 
