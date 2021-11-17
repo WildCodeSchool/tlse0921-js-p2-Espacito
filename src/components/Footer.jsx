@@ -23,6 +23,9 @@ const Footer = () => (
         >
           <h3>Le système solaire</h3>
         </a>
+        <Link to="/flappiss">
+          <h3>Espace Ludique</h3>
+        </Link>
       </FirstRow>
       <SecondRow>
         <img src={logo} alt="Logo Espacito" />
@@ -73,6 +76,7 @@ const FooterContainer = styled.section`
   h3 {
     margin: 0;
     font-size: 2rem;
+    text-align: center;
   }
 
   @media (min-width: 768px) {

@@ -1,11 +1,23 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import NeoCard from './NeoCard';
 
 function Asteroids() {
   const [asteroids, setAsteroids] = useState([]);
-  const [showAsteroids, setShowAsteroids] = useState(false);
+  const [prev, setPrev] = useState(0);
+  const [next, setNext] = useState(6);
   const mergeAsteroids = (carry, current) => [...carry, ...current];
+  const prevAsteroids = () => {
+    if (prev !== 0) {
+      setPrev(prev - 6);
+      setNext(next - 6);
+    }
+  };
+  const nextAsteroids = () => {
+    setPrev(prev + 6);
+    setNext(next + 6);
+  };
   useEffect(() => {
     axios
       .get(
@@ -13,58 +25,67 @@ function Asteroids() {
       )
       .then((res) => res.data.near_earth_objects)
       .then((data) => Object.values(data))
-      .then((data) => data.reduce(mergeAsteroids, []).reverse())
+      .then((data) => data.reduce(mergeAsteroids, []))
       .then((celestObjects) => {
         setAsteroids(celestObjects);
-        setShowAsteroids(true);
       });
   }, []);
-
-  const [filterObjects, setFilterObjects] = useState(false);
-  const [filterObjectsBig, setFilterObjectsBig] = useState(false);
-
-  const hideAllNeoCard = () => {
-    setFilterObjects(true);
-    setShowAsteroids(false);
-    setFilterObjectsBig(false);
-  };
-
-  const hideFilterObject = () => {
-    setShowAsteroids(false);
-    setFilterObjectsBig(true);
-    setFilterObjects(false);
-  };
-
+  
   return (
-    <div>
-      <div>
-        <button type="button" onClick={hideAllNeoCard}>
-          Afficher les comètes les plus dangereuses
-        </button>
-        <button type="button" onClick={hideFilterObject}>
-          Afficher les comètes les plus grandes
-        </button>
-        {!filterObjects && showAsteroids
-          ? asteroids.map((asteroid) => <NeoCard asteroid={asteroid} />)
-          : null}
+    <CelestObjectsContent>
+      <TitleH1>Objets célestes</TitleH1>
+      <AsteroidsCards>
+        {asteroids.slice(prev, next).map((asteroid) => (
+          <NeoCard asteroid={asteroid} />
+        ))}
+      </AsteroidsCards>
+      <NavButtons>
+        <NavButton type="button" onClick={prevAsteroids}>
+          Voir les astéroïdes précédents
+        </NavButton>
+        <NavButton type="button" onClick={nextAsteroids}>
+          Voir les astéroïdes suivants
+        </NavButton>
+      </NavButtons>
+    </CelestObjectsContent>
 
-        {filterObjects && !showAsteroids
-          ? asteroids
-            .filter((el) => el.is_potentially_hazardous_asteroid)
-            .map((asteroid) => <NeoCard asteroid={asteroid} />)
-          : null}
-
-        {filterObjectsBig && !showAsteroids
-          ? asteroids
-            .filter(
-              (el) => el.estimated_diameter.meters.estimated_diameter_max
-                  > 631.0154296359,
-            )
-            .map((asteroid) => <NeoCard asteroid={asteroid} />)
-          : null}
-      </div>
-    </div>
   );
 }
+
+const CelestObjectsContent = styled.div`
+  margin-bottom: 4rem;
+`;
+
+const AsteroidsCards = styled.div`
+  margin: auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+`;
+
+const TitleH1 = styled.h1`
+  text-align: center;
+  margin: 4rem 0;
+`;
+
+const NavButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
+const NavButton = styled.button`
+  background-color: #041844;
+  border: 0;
+  color: #fff;
+  align-items: center;
+  padding: 10px;
+  margin: 1em;
+`;
 
 export default Asteroids;

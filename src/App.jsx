@@ -8,6 +8,7 @@ import CelestObjects from './components/CelestObjects';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
+import Flappiss from './components/Flappiss';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/ressources">
             <Ressources />
+          </Route>
+          <Route path="/flappiss">
+            <Flappiss />
           </Route>
         </Switch>
         <div>
