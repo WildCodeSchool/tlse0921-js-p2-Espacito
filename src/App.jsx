@@ -8,7 +8,6 @@ import IssTracker from './components/IssTracker';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
-import CelestObjects from './components/CelestObjects';
 import Flappiss from './components/Flappiss';
 
 function App() {
@@ -26,9 +25,6 @@ function App() {
           </Route>
           <Route path="/isstracker">
             <IssTracker />
-          </Route>
-          <Route path="/objetscelestes">
-            <CelestObjects />
           </Route>
           <Route path="/photodujour">
             <Pod />

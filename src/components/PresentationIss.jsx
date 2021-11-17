@@ -47,7 +47,7 @@ const HeroVideo = styled.video`
 `;
 
 const IssContainer = styled.div`
-  width: 65%;
+  width: 80%;
   list-style: none;
   margin: 0 auto;
 
@@ -84,8 +84,24 @@ const IssVideoContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   overflow: hidden;
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    display: flex;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
 `;
 
 const PresentationIss = () => (
@@ -105,7 +121,7 @@ const PresentationIss = () => (
       <p>
         La Station spatiale internationale, en abrégé SSI ou ISS, est une
         station spatiale placée en orbite terrestre basse, occupée en permanence
-        par un équipage international qui se consacre à la recherche
+        par un équipage international qui se consacre à la recherche²
         scientifique dans l&apos;environnement spatial.
       </p>
     </Hero>
@@ -139,8 +155,8 @@ const PresentationIss = () => (
     <IssVideoContainer>
       <div>
         <iframe
-          width="480"
-          height="318"
+          width="560"
+          height="315"
           src="https://www.youtube.com/embed/zMt-R898l94"
           title="YouTube video player"
           frameBorder="0"
@@ -150,8 +166,8 @@ const PresentationIss = () => (
       </div>
       <div>
         <iframe
-          width="480"
-          height="318"
+          width="560"
+          height="315"
           src="https://www.youtube.com/embed/X4VfoOftKtc"
           title="YouTube video player"
           frameBorder="0"
