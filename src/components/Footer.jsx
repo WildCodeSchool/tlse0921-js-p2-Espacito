@@ -23,6 +23,9 @@ const Footer = () => (
         >
           <h3>Le système solaire</h3>
         </a>
+        <Link to="/flappiss">
+          <h3>Espace Ludique</h3>
+        </Link>
       </FirstRow>
       <SecondRow>
         <img src={logo} alt="Logo Espacito" />
