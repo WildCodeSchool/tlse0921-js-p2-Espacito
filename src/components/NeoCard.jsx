@@ -3,7 +3,7 @@ import AsteroidImageSizeCompare from './AsteroidImageSizeCompare';
 
 const NeoCard = ({ asteroid }) => {
   const newAsteroidName = asteroid.name.replace(/[(]|[)]/g, '');
-
+  
   return (
     <AsteroidsCards>
       <CardContent>
