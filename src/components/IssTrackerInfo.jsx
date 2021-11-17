@@ -39,7 +39,7 @@ const IssCardInfo = ({ distance, risetime, duration }) => {
           </p>
         </li>
         <li>
-          <h3>Distance entre l&apos;ISS et vous :</h3>
+          <h3>Distance entre l&apos;ISS et toi :</h3>
           <p>{distance} km</p>
         </li>
         <li>
