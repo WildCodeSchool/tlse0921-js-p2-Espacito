@@ -48,7 +48,6 @@ function Asteroids() {
         </NavButton>
       </NavButtons>
     </CelestObjectsContent>
-
   );
 }
 
