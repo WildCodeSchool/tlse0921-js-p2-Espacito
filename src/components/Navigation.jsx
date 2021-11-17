@@ -19,16 +19,16 @@ const Navigation = () => {
         <span />
       </Burger>
       <Menu isOpen={isOpen}>
-        <Link to="/presentationiss">
+        <Link to="/iss-presentation">
           <MenuLink>Présentation de l&apos;ISS</MenuLink>
         </Link>
-        <Link to="/isstracker">
+        <Link to="/iss-tracker">
           <MenuLink>Tracker l&apos;ISS</MenuLink>
         </Link>
-        <Link to="/objetscelestes">
+        <Link to="/celest-objects">
           <MenuLink>Objets Célestes</MenuLink>
         </Link>
-        <Link to="photodujour">
+        <Link to="picture-of-the-day">
           <MenuLink>Photo du jour</MenuLink>
         </Link>
       </Menu>

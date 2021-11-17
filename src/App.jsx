@@ -21,16 +21,16 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/presentationiss">
+          <Route path="/iss-presentation">
             <PresentationIss />
           </Route>
-          <Route path="/isstracker">
+          <Route path="/iss-tracker">
             <IssTracker />
           </Route>
-          <Route path="/objetscelestes">
+          <Route path="/celest-objects">
             <CelestObjects />
           </Route>
-          <Route path="/photodujour">
+          <Route path="/picture-of-the-day">
             <Pod />
           </Route>
           <Route path="/ressources">

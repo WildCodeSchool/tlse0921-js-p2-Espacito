@@ -75,7 +75,7 @@ const FooterContainer = styled.section`
 
   h3 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -90,10 +90,6 @@ const FooterContainer = styled.section`
 const FooterRow = styled.div`
   margin: 2rem auto;
 
-  &:hover {
-    color: #7b7fda;
-  }
-
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -106,28 +102,25 @@ const FirstRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
     width: 30%;
   }
 `;
 
 const SecondRow = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-
-  img {
-    width: 40%;
-  }
+  display: none;
 
   @media (min-width: 768px) {
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 25%;
 
     img {
-      width: 60%;
+      max-width: 60%;
     }
   }
 `;
@@ -156,10 +149,6 @@ const LogoRs = styled.a`
   @media (min-width: 768px) {
     justify-content: flex-end;
     align-items: center;
-
-    img {
-      width: 40%;
-    }
   }
 `;
 
