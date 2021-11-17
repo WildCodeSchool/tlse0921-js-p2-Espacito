@@ -9,7 +9,7 @@ const Home = () => (
   <div>
     <Title> ESPACITO, à la découverte de l&apos;espace !</Title>
     <CardsContainer>
-      <Link to="/presentationiss">
+      <Link to="/iss-presentation">
         <NavCard>
           <Cards>
             <CardImgContainer>
@@ -21,7 +21,7 @@ const Home = () => (
           </Cards>
         </NavCard>
       </Link>
-      <Link to="/isstracker">
+      <Link to="/iss-tracker">
         <NavCard>
           <Cards>
             <CardImgContainer>
@@ -33,7 +33,7 @@ const Home = () => (
           </Cards>
         </NavCard>
       </Link>
-      <Link to="/objetscelestes">
+      <Link to="/celest-objects">
         <NavCard>
           <Cards>
             <CardImgContainer>
@@ -45,7 +45,7 @@ const Home = () => (
           </Cards>
         </NavCard>
       </Link>
-      <Link to="/photodujour">
+      <Link to="/picture-of-the-day">
         <NavCard>
           <Cards>
             <CardImgContainer>
