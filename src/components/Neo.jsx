@@ -28,24 +28,8 @@ function Asteroids() {
       .then((data) => data.reduce(mergeAsteroids, []))
       .then((celestObjects) => {
         setAsteroids(celestObjects);
-        setShowAsteroids(true);
       });
   }, []);
-
-  const [filterObjects, setFilterObjects] = useState(false);
-  const [filterObjectsBig, setFilterObjectsBig] = useState(false);
-
-  const hideAllNeoCard = () => {
-    setFilterObjects(true);
-    setShowAsteroids(false);
-    setFilterObjectsBig(false);
-  };
-
-  const hideFilterObject = () => {
-    setShowAsteroids(false);
-    setFilterObjectsBig(true);
-    setFilterObjects(false);
-  };
 
   return (
     <CelestObjectsContent>
