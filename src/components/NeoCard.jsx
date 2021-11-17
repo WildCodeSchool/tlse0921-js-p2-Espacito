@@ -1,17 +1,9 @@
 import styled from 'styled-components';
+import AsteroidImageSizeCompare from './AsteroidImageSizeCompare';
 
 const NeoCard = ({ asteroid }) => {
   const newAsteroidName = asteroid.name.replace(/[(]|[)]/g, '');
-  const asteroidMaxDiameter = Math.floor(
-    asteroid.estimated_diameter.meters.estimated_diameter_max,
-  );
-  const asteroidComparedImage = () => {
-    let url = null;
-    if (asteroidMaxDiameter < 700) {
-      url = 'https://static.actu.fr/uploads/2019/06/25234-190613143947629-0-960x640.jpg';
-    }
-    return url;
-  };
+
   return (
     <AsteroidsCards>
       <CardContent>
@@ -54,10 +46,7 @@ const NeoCard = ({ asteroid }) => {
               kilomètres.
             </p>
           </AsteroidInfo>
-          <AsteroidSizeCompare>
-            <TitleH3> Taille comparative</TitleH3>
-            <AsteroidImageSizeCompare src={asteroidComparedImage()} alt="" />
-          </AsteroidSizeCompare>
+          <AsteroidImageSizeCompare asteroid={asteroid} />
         </AsteroidContents>
       </CardContent>
     </AsteroidsCards>
@@ -71,10 +60,6 @@ const AsteroidsCards = styled.div`
 `;
 
 const TitleH2 = styled.h2`
-  text-align: center;
-`;
-
-const TitleH3 = styled.h3`
   text-align: center;
 `;
 
@@ -95,8 +80,11 @@ const CardContent = styled.div`
 `;
 
 const AsteroidContents = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   @media (min-width: 768px) {
-    display: flex;
     flex-direction: row;
   }
 `;
@@ -110,21 +98,6 @@ const AsteroidInfo = styled.div`
     min-width: 40%;
     margin-right: 5rem;
   }
-`;
-
-const AsteroidSizeCompare = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (min-width: 768px) {
-    align-items: center;
-    width: 40%;
-  }
-`;
-
-const AsteroidImageSizeCompare = styled.img`
-  width: 80%;
 `;
 
 export default NeoCard;
