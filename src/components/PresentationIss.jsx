@@ -1,10 +1,4 @@
 import styled from 'styled-components';
-import presentationiss from '../ressources/assets-home/presentation-iss.png';
-import videoIss from '../ressources/assets-iss/videoIss.mp4';
-import earth from '../ressources/assets-iss/earth.png';
-import law from '../ressources/assets-iss/law.png';
-import aquarium from '../ressources/assets-iss/aquarium.png';
-import bulb from '../ressources/assets-iss/bulb.png';
 import Astronauts from './Astronauts';
 
 const Hero = styled.div`
@@ -114,10 +108,10 @@ const PresentationIss = () => (
     <Hero>
       <HeroHeader>
         <HeroVideo autoPlay muted loop>
-          <source src={videoIss} type="video/mp4" />
+          <source src="ressources/assets-iss/videoIss.mp4" type="video/mp4" />
         </HeroVideo>
         <div>
-          <img src={presentationiss} alt="Logo" />
+          <img src="ressources/assets-home/presentation-iss.png" alt="Logo" />
         </div>
         <div>
           <h1>Qu&apos;est-ce que l&apos;ISS ?</h1>
@@ -133,24 +127,24 @@ const PresentationIss = () => (
     <IssContainer>
       <ul>
         <li>
-          <img src={earth} alt="Earth" />
+          <img src="ressources/assets-iss/earth.png" alt="Earth" />
           L’ISS fait le tour de la Terre en 90 minutes, soit 16 fois par jour.
           Un astronaute à bord de l’ISS peut donc voir autant de couchers et de
           levers de soleil au quotidien.
         </li>
         <li>
-          <img src={bulb} alt="Bulb" />
+          <img src="ressources/assets-iss/bulb.png" alt="Bulb" />
           27 600 km/h, c’est la vitesse de déplacement de l’ISS. Un appareil
           propulsé à cette vitesse sur Terre permettrait de relier Paris à New
           York en moins de 15 minutes ! L’ISS est en chute libre permanente !
         </li>
         <li>
-          <img src={aquarium} alt="Aquarium" />
+          <img src="ressources/assets-iss/aquarium.png" alt="Aquarium" />
           L’ISS dispose d’une serre et d’un aquarium ! Depuis 2002, des plantes
           et des légumes sont cultivés dans la partie russe de l’ISS.
         </li>
         <li>
-          <img src={law} alt="Law" />
+          <img src="ressources/assets-iss/law.png" alt="Law" />
           Quelle loi à bord de l’ISS ? Le traité stipule que la loi des pays
           signataires s’applique dans les modules qu’ils ont financés au sein de
           la station.

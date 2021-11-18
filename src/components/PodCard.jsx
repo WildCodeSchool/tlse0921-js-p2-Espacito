@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import podIcone from '../ressources/assets-home/podIcone.png';
 
 const Icone = styled.img`
   width: 150px;
@@ -78,7 +77,11 @@ const Image = styled.img`
 
 const PodCard = ({ pod }) => (
   <PodCardStyle>
-    <Icone src={podIcone} alt="Icone of the Day" width="100px" />
+    <Icone
+      src="ressources/assets-home/podIcone.png"
+      alt="Icone of the Day"
+      width="100px"
+    />
     <TitlePodCardStyle>
       Chaque jour découvrez une image du ciel
     </TitlePodCardStyle>
