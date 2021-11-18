@@ -30,6 +30,10 @@ const Filter = styled.div`
     width: 80%;
     margin: 0 auto;
   }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 function Pod() {
@@ -64,7 +68,7 @@ function Pod() {
       .then((res) => res.data)
       .then((data) => ({
         copyright: data.copyright,
-        date: data.date,
+        date: data.date.split('-').reverse().join('-'),
         explanation: data.explanation,
         image: data.url,
         title: data.title,
@@ -83,7 +87,7 @@ function Pod() {
   return (
     <div>
       {!showCard ? <PodCard pod={pod} /> : null}
-      <TitleTwo>Personnalisez votre image </TitleTwo>
+      <TitleTwo>Choisissez une date entre 1997 et aujourd&apos;hui</TitleTwo>
       <Filter>
         <Container>
           <input
@@ -100,7 +104,7 @@ function Pod() {
               hidePodCard();
             }}
           >
-            Choisissez une date entre 1997 et aujourd&apos;hui
+            Découvrir l&apos;image
           </Button>
         </Container>
       </Filter>
