@@ -20,17 +20,19 @@ function VideoIss() {
 const VideoCard = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 `;
 const Title = styled.h2`
   color: #041844;
-  margin: 1em;
+  margin: 0 auto;
   text-align: center;
+  padding: 1em;
 `;
 const DirectVideo = styled.iframe`
   max-width: 95%;
-  margin: auto;
-  border-radius: 10px;
+  margin: 0 auto;
+  border-radius: 51px;
 `;
 
 export default VideoIss;

@@ -75,7 +75,7 @@ function IssTracker() {
           lngGeoloc={lngGeoloc}
         />
       </CardContainer>
-      <InfoAndVideo>
+      <div>
         <CardContainer show={info}>
           <IssCardInfo
             distance={CalculDist(lngIss, lngGeoloc, latIss, latGeoloc)}
@@ -83,10 +83,12 @@ function IssTracker() {
             duration={duration}
           />
         </CardContainer>
-        <CardContainer show={videoIss}>
+      </div>
+      <CardContainer show={videoIss}>
+        <div>
           <VideoIss />
-        </CardContainer>
-      </InfoAndVideo>
+        </div>
+      </CardContainer>
     </DivIssTracker>
   );
 }
@@ -98,18 +100,7 @@ const DivIssTracker = styled.div`
   margin: 0 auto 2em;
 
   @media (min-width: 768px) {
-    width: 90%;
-  }
-`;
-const InfoAndVideo = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    margin: auto;
+    width: 100%;
   }
 `;
 

@@ -23,7 +23,7 @@ function ButtonsSwitch({
             setVideoIss(false);
           }}
         >
-          Carte de localisation
+          Carte
         </Button>
       </ButtonLink>
       <ButtonLink to="/iss-tracker/informations">
@@ -37,7 +37,7 @@ function ButtonsSwitch({
             setVideoIss(false);
           }}
         >
-          Informations de la station
+          Infos
         </Button>
       </ButtonLink>
       <ButtonLink to="/iss-tracker/video">
@@ -51,7 +51,7 @@ function ButtonsSwitch({
             setVideoIss(true);
           }}
         >
-          Vidéo en direct
+          Direct
         </Button>
       </ButtonLink>
     </ButtonsDiv>
