@@ -14,6 +14,7 @@ const Hero = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 2rem;
 
   h1 {
@@ -22,8 +23,12 @@ const Hero = styled.div`
 
   p {
     color: white;
-    text-align: center;
-    width: 50%;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      width: 50%;
+    }
   }
 `;
 
@@ -49,7 +54,7 @@ const HeroVideo = styled.video`
 `;
 
 const IssContainer = styled.div`
-  width: 65%;
+  width: 100%;
   list-style: none;
   margin: 3rem auto 4rem;
 
@@ -73,6 +78,8 @@ const IssContainer = styled.div`
   }
 
   @media (min-width: 768px) {
+    width: 65%;
+
     p {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
