@@ -74,7 +74,7 @@ const IssContainer = styled.div`
   @media (min-width: 768px) {
     width: 65%;
 
-    p {
+    ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1rem;
