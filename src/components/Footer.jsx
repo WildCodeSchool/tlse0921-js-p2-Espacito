@@ -25,16 +25,19 @@ const Footer = () => (
         <img src={logo} alt="Logo Espacito" />
       </SecondRow>
       <ThirdRow>
-        <LogoRs href="https://www.facebook.com/ISS">
+        <LogoRs href="https://www.facebook.com/ISS" target="_blank">
           <img src={facebook} alt="Logo Facebook" />
         </LogoRs>
-        <LogoRs href="https://twitter.com/Space_Station">
+        <LogoRs href="https://twitter.com/Space_Station" target="_blank">
           <img src={twitter} alt="Logo Twitter" />
         </LogoRs>
-        <LogoRs href="https://www.linkedin.com/in/thomas-pesquet/">
+        <LogoRs
+          href="https://www.linkedin.com/in/thomas-pesquet/"
+          target="_blank"
+        >
           <img src={linkedin} alt="Logo LinkedIn" />
         </LogoRs>
-        <LogoRs href="https://www.instagram.com/iss">
+        <LogoRs href="https://www.instagram.com/iss" target="_blank">
           <img src={instagram} alt="Logo Instagram" />
         </LogoRs>
       </ThirdRow>
@@ -69,7 +72,7 @@ const FooterContainer = styled.section`
 
   h3 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -84,11 +87,7 @@ const FooterContainer = styled.section`
 const FooterRow = styled.div`
   margin: 2rem auto;
 
-  &:hover {
-    color: #7b7fda;
-  }
-
-  @media (min-width: 1300px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -100,30 +99,26 @@ const FirstRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   line-height: 2.5;
 
-  @media (min-width: 1580px) {
-    flex-direction: column;
-    justify-content: center;
+  @media (min-width: 768px) {
+    align-items: flex-start;
     width: 30%;
-    line-height: 1.5;
   }
 `;
 
 const SecondRow = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-
-  img {
-    width: 40%;
-  }
+  display: none;
 
   @media (min-width: 768px) {
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 25%;
 
     img {
-      width: 60%;
+      max-width: 60%;
     }
   }
 `;
@@ -149,13 +144,9 @@ const LogoRs = styled.a`
     width: 40%;
   }
 
-  @media (min-width: 1580px) {
+  @media (min-width: 768px) {
     justify-content: flex-end;
     align-items: center;
-
-    img {
-      width: 50%;
-    }
   }
 `;
 
