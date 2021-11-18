@@ -80,7 +80,8 @@ const IssCardInfo = ({ distance, risetime, duration }) => {
 
 const CardInfo = styled.div`
   @media (min-width: 768px) {
-    width: 100%;
+    width: 82%;
+    margin: 0 auto;
   }
 `;
 const Title = styled.h2`
@@ -88,19 +89,22 @@ const Title = styled.h2`
   margin: 1em;
   text-align: center;
 `;
+
 const InfoList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  background-color: #c8ced6;
-  border: solid black;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-  margin: auto;
+  width: 65%;
+  background-color: white;
+  margin: 1em auto;
   padding: 2em 1em;
   justify-content: flex-start;
   align-items: center;
+
+  @media (min-width: 768px) {
+    border: 4px solid black;
+    border-radius: 51px;
+  }
 `;
 
 export default IssCardInfo;
