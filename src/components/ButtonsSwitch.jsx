@@ -12,7 +12,7 @@ function ButtonsSwitch({
 }) {
   return (
     <ButtonsDiv>
-      <ButtonLink to="/isstracker/map">
+      <ButtonLink to="/iss-tracker/map">
         <Button
           type="button"
           backColor={butMap}
@@ -26,7 +26,7 @@ function ButtonsSwitch({
           Carte de localisation
         </Button>
       </ButtonLink>
-      <ButtonLink to="/isstracker/informations">
+      <ButtonLink to="/iss-tracker/informations">
         <Button
           type="button"
           backColor={butInfo}
@@ -40,7 +40,7 @@ function ButtonsSwitch({
           Informations de la station
         </Button>
       </ButtonLink>
-      <ButtonLink to="/isstracker/video">
+      <ButtonLink to="/iss-tracker/video">
         <Button
           type="button"
           backColor={butVideo}
