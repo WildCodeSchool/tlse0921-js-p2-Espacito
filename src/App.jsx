@@ -1,13 +1,15 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Navigation from './components/Navigation';
-import Home from './components/Home';
 import PresentationIss from './components/PresentationIss';
 import IssTracker from './components/IssTracker';
-import CelestObjects from './components/CelestObjects';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
 import Ressources from './components/Ressources';
+import CelestObjects from './components/CelestObjects';
+import Flappiss from './components/Flappiss';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -19,20 +21,23 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/presentationiss">
+          <Route path="/iss-presentation">
             <PresentationIss />
           </Route>
-          <Route path="/isstracker">
+          <Route path="/iss-tracker">
             <IssTracker />
           </Route>
-          <Route path="/objetscelestes">
+          <Route path="/celest-objects">
             <CelestObjects />
           </Route>
-          <Route path="/photodujour">
+          <Route path="/picture-of-the-day">
             <Pod />
           </Route>
           <Route path="/ressources">
             <Ressources />
+          </Route>
+          <Route path="/flappiss">
+            <Flappiss />
           </Route>
         </Switch>
         <div>
@@ -61,6 +66,10 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: 'Poppins', sans-serif;
     color: black;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 

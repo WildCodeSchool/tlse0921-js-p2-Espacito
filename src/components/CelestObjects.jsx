@@ -1,6 +1,9 @@
+import Asteroids from './Neo';
+import NeoCard from './NeoCard';
+
 const CelestObjects = () => (
   <div>
-    <h1>Objets célestes</h1>
+    <Asteroids NeoCard={NeoCard} />
   </div>
 );
 export default CelestObjects;

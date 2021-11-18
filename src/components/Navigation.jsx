@@ -1,4 +1,4 @@
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
 import logo from '../ressources/logo512.png';
@@ -19,16 +19,16 @@ const Navigation = () => {
         <span />
       </Burger>
       <Menu isOpen={isOpen}>
-        <Link to="/presentationiss">
+        <Link to="/iss-presentation">
           <MenuLink>Présentation de l&apos;ISS</MenuLink>
         </Link>
-        <Link to="/isstracker">
+        <Link to="/iss-tracker">
           <MenuLink>Tracker l&apos;ISS</MenuLink>
         </Link>
-        <Link to="/objetscelestes">
+        <Link to="/celest-objects">
           <MenuLink>Objets Célestes</MenuLink>
         </Link>
-        <Link to="photodujour">
+        <Link to="picture-of-the-day">
           <MenuLink>Photo du jour</MenuLink>
         </Link>
       </Menu>
@@ -75,6 +75,7 @@ const MenuLink = styled.div`
   color: white;
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
+  font-family: 'Audiowide', cursive;
 
   &:hover {
     color: #7b7fda;
@@ -100,7 +101,7 @@ const Logo = styled.a`
   width: 25%;
 
   img {
-    width: 250px;
+    width: 230px;
   }
 `;
 

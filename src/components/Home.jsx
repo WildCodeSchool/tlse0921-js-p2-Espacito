@@ -1,53 +1,62 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import presentationiss from '../ressources/assets-home/presentation-iss.png';
 import isstracker from '../ressources/assets-home/iss-tracker.png';
 import celestobjects from '../ressources/assets-home/celest-objects.png';
-import pod from '../ressources/assets-home/pod.png';
+import podIcone from '../ressources/assets-home/podIcone.png';
 
 const Home = () => (
   <div>
-    <Title> ESPACITO</Title>
+    <Title> ESPACITO, à la découverte de l&apos;espace !</Title>
     <CardsContainer>
-      <NavLink href="/presentationiss">
-        <Cards>
-          <CardImgContainer>
-            <img src={presentationiss} alt="ISS icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Présentation de l&apos;ISS</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/isstracker">
-        <Cards>
-          <CardImgContainer>
-            <img src={isstracker} alt="Parabol icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Tracker l&apos;ISS</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/objetscelestes">
-        <Cards>
-          <CardImgContainer>
-            <img src={celestobjects} alt="Comete icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>Les objets célestes</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
-      <NavLink href="/photodujour">
-        <Cards>
-          <CardImgContainer>
-            <img src={pod} alt="Telescope icone" />
-          </CardImgContainer>
-          <cardTitle>
-            <h2>L&apos;image du jour</h2>
-          </cardTitle>
-        </Cards>
-      </NavLink>
+      <Link to="/iss-presentation">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={presentationiss} alt="ISS icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2 className="white">Présentation de l&apos;ISS</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/iss-tracker">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={isstracker} alt="Parabol icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2 className="white">Tracker l&apos;ISS</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/celest-objects">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={celestobjects} alt="Comete icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2 className="white">Les objets célestes</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
+      <Link to="/picture-of-the-day">
+        <NavCard>
+          <Cards>
+            <CardImgContainer>
+              <img src={podIcone} alt="Telescope icone" />
+            </CardImgContainer>
+            <cardTitle>
+              <h2 className="white">L&apos;image du jour</h2>
+            </cardTitle>
+          </Cards>
+        </NavCard>
+      </Link>
     </CardsContainer>
   </div>
 );
@@ -67,28 +76,29 @@ const CardsContainer = styled.section`
 
 const Cards = styled.div`
   display: flex;
-  background-color: #c8ced6;
-  border: solid black;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  background-color: #041844ff;
+  border-radius: 51px;
+  border: 4px solid #fff;
   width: 90%;
   margin: 1rem auto;
   padding: 5px 0;
   justify-content: flex-start;
   align-items: center;
 
+  .white {
+    color: #fff;
+  }
+
   img {
     width: 60%;
     margin: 1rem;
   }
 
-  /* div {
-    display: flex;
-    justify-content: center;
-    min-width: 40%;
-    max-width: 40%;
-    height: 100%;
-  } */
+  &:hover {
+    background-color: #7b7fda;
+    color: #041844ff !important;
+    border: 4px solid #041844ff;
+  }
 
   @media (min-width: 768px) {
     margin: 0;
@@ -107,9 +117,10 @@ const CardImgContainer = styled.div`
 
 const Title = styled.h1`
   text-align: center;
+  margin: 4rem 0;
 `;
 
-const NavLink = styled.a`
+const NavCard = styled.a`
   text-decoration: none;
   color: black;
 `;

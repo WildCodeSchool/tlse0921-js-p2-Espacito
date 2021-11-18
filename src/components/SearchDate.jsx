@@ -1,10 +1,4 @@
 import styled from 'styled-components';
-import podIcone from '../ressources/assets-home/podIcone.png';
-
-const Icone = styled.img`
-  width: 150px;
-  margin-top: 2em;
-`;
 
 const PodCardStyle = styled.div`
   width: 100%;
@@ -12,7 +6,6 @@ const PodCardStyle = styled.div`
   font-family: Verdana, Tahoma, sans-serif;
   text-align: center;
 `;
-
 const Paragraphe = styled.p`
   color: #fff;
 `;
@@ -22,30 +15,25 @@ const PodRowGlobal = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding: 1em;
-  margin-bottom: 4em;
+  margin-bottom: 6em;
 
   @media (max-width: 1066px) {
     flex-direction: column;
     padding: 0;
   }
 `;
+
 const PodRow = styled.div`
   width: 47%;
   padding: 1em;
   margin-top: 4em;
+  margin-bottom: 4em;
 
   @media (max-width: 1066px) {
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
   }
-`;
-
-const TitlePodCardStyle = styled.h1`
-  text-align: center;
-  display: block !important;
-  margin: 0 auto;
-  padding: 2em;
 `;
 
 const TitlePodStyle = styled.h2`
@@ -76,38 +64,36 @@ const Image = styled.img`
   }
 `;
 
-const PodCard = ({ pod }) => (
+const SearchDate = ({ filterDate }) => (
   <PodCardStyle>
-    <Icone src={podIcone} alt="Icone of the Day" width="100px" />
-    <TitlePodCardStyle>
-      Chaque jour découvrez une image du ciel
-    </TitlePodCardStyle>
     <PodRowGlobal>
       <PodRow>
-        {pod.media_type === 'image' ? (
-          <Image src={pod.image} alt={pod.title} className="photo" />
+        {filterDate.media_type === 'image' ? (
+          <Image
+            src={filterDate.image}
+            alt={filterDate.title}
+            className="photo"
+          />
         ) : (
           <iframe
             title="space-video"
-            src={pod.image}
+            src={filterDate.image}
             frameBorder="0"
             gesture="media"
             allow="encrypted-media"
             allowFullScreen
             className="photo"
-            width="600"
           />
         )}
       </PodRow>
-
       <PodRow>
-        <TitlePodStyle>{pod.title}</TitlePodStyle>
-        <Paragraphe>{pod.date}</Paragraphe>
-        <Paragraphe>{pod.copyright}</Paragraphe>
-        <ParagrapheLeft> {pod.explanation}</ParagrapheLeft>
+        <TitlePodStyle>{filterDate.title}</TitlePodStyle>
+        <Paragraphe>{filterDate.date}</Paragraphe>
+        <Paragraphe>{filterDate.copyright}</Paragraphe>
+        <ParagrapheLeft>{filterDate.explanation}</ParagrapheLeft>
       </PodRow>
     </PodRowGlobal>
   </PodCardStyle>
 );
 
-export default PodCard;
+export default SearchDate;
