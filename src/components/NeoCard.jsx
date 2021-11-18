@@ -13,7 +13,7 @@ const NeoCard = ({ asteroid }) => {
         <AsteroidContents>
           <AsteroidInfo>
             <p>
-              <b>Diamètre éstimé</b>:<br />
+              <span className="strong">Diamètre estimé</span>:<br />
               entre{' '}
               <b>
                 {Math.floor(
@@ -29,17 +29,23 @@ const NeoCard = ({ asteroid }) => {
               mètres
             </p>
             <p>
-              <b>Potentiellement dagereux</b> :<br />
+              <span className="strong">Potentiellement dangereux</span> :<br />
               {asteroid.is_potentially_hazardous_asteroid
                 ? 'Dangereux'
                 : 'Non dangereux'}{' '}
             </p>
             <p>
-              <b>Date où il sera le plus proche de la terre</b> :<br />
+              <span className="strong">
+                Date où il sera le plus proche de la terre
+              </span>{' '}
+              :<br />
               {asteroid.close_approach_data[0].close_approach_date}
             </p>
             <p>
-              <b>Distance la plus proche de la terre</b> :<br />
+              <span className="strong">
+                Distance la plus proche de la terre
+              </span>{' '}
+              :<br />
               {Math.floor(
                 asteroid.close_approach_data[0].miss_distance.kilometers,
               )}{' '}
@@ -66,12 +72,16 @@ const TitleH2 = styled.h2`
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #c8ced6;
-  border: solid black;
-  border-width: 3px 4px 3px 5px;
-  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  border: 4px solid black;
+  border-radius: 51px;
   margin: 1rem 1em;
   padding: 2rem;
+
+  .strong {
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: underline;
+  }
 
   @media (min-width: 768px) {
     margin: 2rem;

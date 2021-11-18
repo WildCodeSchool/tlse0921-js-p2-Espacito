@@ -89,7 +89,6 @@ const Title = styled.h2`
   margin: 1em;
   text-align: center;
 `;
-
 const InfoList = styled.ul`
   list-style: none;
   display: flex;
