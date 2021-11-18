@@ -10,12 +10,6 @@ const Footer = () => (
   <FooterContainer>
     <FooterRow>
       <FirstRow>
-        <Link to="/ressources">
-          <h3>Ressources</h3>
-        </Link>
-        <Link to="/team">
-          <h3>Team</h3>
-        </Link>
         <a
           href="https://shielded-earth-94641.herokuapp.com/"
           target="_blank"
@@ -23,21 +17,40 @@ const Footer = () => (
         >
           <h3>Le système solaire</h3>
         </a>
+        <Link to="/flappiss">
+          <h3>Espace Ludique</h3>
+        </Link>
       </FirstRow>
       <SecondRow>
         <img src={logo} alt="Logo Espacito" />
       </SecondRow>
       <ThirdRow>
-        <LogoRs href="https://www.facebook.com/ISS">
+        <LogoRs
+          href="https://www.facebook.com/ISS"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={facebook} alt="Logo Facebook" />
         </LogoRs>
-        <LogoRs href="https://twitter.com/Space_Station">
+        <LogoRs
+          href="https://twitter.com/Space_Station"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={twitter} alt="Logo Twitter" />
         </LogoRs>
-        <LogoRs href="https://www.linkedin.com/in/thomas-pesquet/">
+        <LogoRs
+          href="https://www.linkedin.com/in/thomas-pesquet/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={linkedin} alt="Logo LinkedIn" />
         </LogoRs>
-        <LogoRs href="https://www.instagram.com/iss">
+        <LogoRs
+          href="https://www.instagram.com/iss"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={instagram} alt="Logo Instagram" />
         </LogoRs>
       </ThirdRow>
@@ -45,11 +58,19 @@ const Footer = () => (
     <Credits>
       <p>
         ©2021 Espacito -{' '}
-        <a href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228">
+        <a
+          href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228"
+          target="_blank"
+          rel="noreferrer"
+        >
           Mentions légales
         </a>{' '}
         -{' '}
-        <a href="https://www.francenum.gouv.fr/comprendre-le-numerique/rediger-des-conditions-generales-dutilisation-cgu-pour-son-site-internet">
+        <a
+          href="https://www.francenum.gouv.fr/comprendre-le-numerique/rediger-des-conditions-generales-dutilisation-cgu-pour-son-site-internet"
+          target="_blank"
+          rel="noreferrer"
+        >
           Conditions générales d&apos;utilisation
         </a>
       </p>
@@ -72,7 +93,8 @@ const FooterContainer = styled.section`
 
   h3 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   @media (min-width: 768px) {
@@ -86,10 +108,6 @@ const FooterContainer = styled.section`
 const FooterRow = styled.div`
   margin: 2rem auto;
 
-  &:hover {
-    color: #7b7fda;
-  }
-
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -102,28 +120,25 @@ const FirstRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
     width: 30%;
   }
 `;
 
 const SecondRow = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-
-  img {
-    width: 40%;
-  }
+  display: none;
 
   @media (min-width: 768px) {
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 25%;
 
     img {
-      width: 60%;
+      max-width: 71%;
     }
   }
 `;
@@ -152,10 +167,6 @@ const LogoRs = styled.a`
   @media (min-width: 768px) {
     justify-content: flex-end;
     align-items: center;
-
-    img {
-      width: 40%;
-    }
   }
 `;
 
