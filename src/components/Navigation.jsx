@@ -101,7 +101,8 @@ const Logo = styled.a`
   width: 25%;
 
   img {
-    width: 230px;
+    width: 200px;
+    padding: 10px;
   }
 `;
 

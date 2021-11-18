@@ -72,7 +72,7 @@ const IssContainer = styled.div`
     margin-bottom: 1em;
   }
 
-  p {
+  ul {
     display: flex;
     flex-direction: column;
   }
@@ -131,7 +131,7 @@ const PresentationIss = () => (
       </p>
     </Hero>
     <IssContainer>
-      <p>
+      <ul>
         <li>
           <img src={earth} alt="Earth" />
           L’ISS fait le tour de la Terre en 90 minutes, soit 16 fois par jour.
@@ -155,7 +155,7 @@ const PresentationIss = () => (
           signataires s’applique dans les modules qu’ils ont financés au sein de
           la station.
         </li>
-      </p>
+      </ul>
     </IssContainer>
     <Astronauts />
     <IssVideoContainer>
