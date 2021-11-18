@@ -174,6 +174,7 @@ const Credits = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+  padding: 10px;
 `;
 
 export default Footer;

@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Audiowide', cursive;
   }
 
-  p {
+  p, ul {
     font-family: 'Poppins', sans-serif;
     color: black;
   }
