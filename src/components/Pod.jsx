@@ -100,7 +100,7 @@ function Pod() {
               hidePodCard();
             }}
           >
-            Découvrir la photo personnalisée
+            Choisissez une date entre 1997 et aujourd&apos;hui
           </Button>
         </Container>
       </Filter>
