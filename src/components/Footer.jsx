@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import logo from '../ressources/logo512.png';
-import facebook from '../ressources/assets-footer/facebook.png';
-import twitter from '../ressources/assets-footer/twitter.png';
-import linkedin from '../ressources/assets-footer/linkedin.png';
-import instagram from '../ressources/assets-footer/instagram.png';
 
 const Footer = () => (
   <FooterContainer>
@@ -22,7 +17,7 @@ const Footer = () => (
         </Link>
       </FirstRow>
       <SecondRow>
-        <img src={logo} alt="Logo Espacito" />
+        <img src="ressources/logo512.png" alt="Logo Espacito" />
       </SecondRow>
       <ThirdRow>
         <LogoRs
@@ -30,28 +25,37 @@ const Footer = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <img src={facebook} alt="Logo Facebook" />
+          <img
+            src="ressources/assets-footer/facebook.png"
+            alt="Logo Facebook"
+          />
         </LogoRs>
         <LogoRs
           href="https://twitter.com/Space_Station"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={twitter} alt="Logo Twitter" />
+          <img src="ressources/assets-footer/twitter.png" alt="Logo Twitter" />
         </LogoRs>
         <LogoRs
           href="https://www.linkedin.com/in/thomas-pesquet/"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={linkedin} alt="Logo LinkedIn" />
+          <img
+            src="ressources/assets-footer/linkedin.png"
+            alt="Logo LinkedIn"
+          />
         </LogoRs>
         <LogoRs
           href="https://www.instagram.com/iss"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={instagram} alt="Logo Instagram" />
+          <img
+            src="ressources/assets-footer/instagram.png"
+            alt="Logo Instagram"
+          />
         </LogoRs>
       </ThirdRow>
     </FooterRow>

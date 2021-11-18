@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import presentationiss from '../ressources/assets-home/presentation-iss.png';
-import isstracker from '../ressources/assets-home/iss-tracker.png';
-import celestobjects from '../ressources/assets-home/celest-objects.png';
-import podIcone from '../ressources/assets-home/podIcone.png';
 
 const Home = () => (
   <div>
@@ -13,7 +9,10 @@ const Home = () => (
         <NavCard>
           <Cards>
             <CardImgContainer>
-              <img src={presentationiss} alt="ISS icone" />
+              <img
+                src="ressources/assets-home/presentation-iss.png"
+                alt="ISS icone"
+              />
             </CardImgContainer>
             <cardTitle>
               <h2 className="white">Présentation de l&apos;ISS</h2>
@@ -25,7 +24,10 @@ const Home = () => (
         <NavCard>
           <Cards>
             <CardImgContainer>
-              <img src={isstracker} alt="Parabol icone" />
+              <img
+                src="ressources/assets-home/iss-tracker.png"
+                alt="Parabol icone"
+              />
             </CardImgContainer>
             <cardTitle>
               <h2 className="white">Tracker l&apos;ISS</h2>
@@ -37,7 +39,10 @@ const Home = () => (
         <NavCard>
           <Cards>
             <CardImgContainer>
-              <img src={celestobjects} alt="Comete icone" />
+              <img
+                src="ressources/assets-home/celest-objects.png"
+                alt="Comete icone"
+              />
             </CardImgContainer>
             <cardTitle>
               <h2 className="white">Les objets célestes</h2>
@@ -49,7 +54,10 @@ const Home = () => (
         <NavCard>
           <Cards>
             <CardImgContainer>
-              <img src={podIcone} alt="Telescope icone" />
+              <img
+                src="ressources/assets-home/podIcone.png"
+                alt="Telescope icone"
+              />
             </CardImgContainer>
             <cardTitle>
               <h2 className="white">L&apos;image du jour</h2>
