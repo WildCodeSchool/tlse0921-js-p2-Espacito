@@ -83,11 +83,23 @@ const IssContainer = styled.div`
 
 const IssVideoContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  overflow: hidden;
-  width: 65%;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 95%;
+  margin: 2rem auto;
+
+  iframe {
+    width: 100%;
+    height: 350px;
+  }
+
+  @media (min-width: 768px) {
+    iframe {
+      width: 60%;
+      height: 500px;
+    }
+  }
 `;
 
 const PresentationIss = () => (
@@ -140,29 +152,16 @@ const PresentationIss = () => (
     </IssContainer>
     <Astronauts />
     <IssVideoContainer>
-      <div>
-        <iframe
-          width="480"
-          height="318"
-          src="https://www.youtube.com/embed/zMt-R898l94"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-      <div>
-        <iframe
-          width="480"
-          height="318"
-          src="https://www.youtube.com/embed/X4VfoOftKtc"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
+      <h2>VISITE DE L&apos;ISS AVEC THOMAS PESQUET</h2>
+      <iframe
+        src="https://www.youtube.com/embed/zMt-R898l94"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
     </IssVideoContainer>
   </div>
 );
+
 export default PresentationIss;
