@@ -1,8 +1,7 @@
-/* eslint-disable react/button-has-type */
 import styled from 'styled-components';
 
 const Card = styled.div`
-  width: 33%;
+  width: 30%;
   flex-wrap: wrap;
 `;
 
@@ -14,7 +13,7 @@ const TeamISSCard = ({ team }) => (
     <p>{team.position}</p>
     <img src={team.image} alt={team.name} width="200" height="300" />;
     <p>
-      <button typeof="button">
+      <button type="button">
         <a href={team.url}>En savoir plus</a>
       </button>
     </p>

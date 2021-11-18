@@ -53,18 +53,21 @@ const BackgroundModal = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 50%;
+  width: 95%;
   box-shadow: 0 5px 16px rgba(0 0 0 /20%);
   background: #fff;
   color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 10;
   border-radius: 10px;
+  overflow: hidden;
 
-  @media (max-width: 1271px) {
-    width: 100%;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
     margin: 0 5px;
     text-align: center;
   }
@@ -73,16 +76,17 @@ const ModalWrapper = styled.div`
 const ModalImage = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 10px 0 0 10px;
   background: #000;
 `;
 
 const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  line-height: 3;
+  padding: 1.5rem 0;
+  line-height: 1.5;
+  font-size: 11px;
   color: #141414;
 
   p {
@@ -96,20 +100,20 @@ const ModalContent = styled.div`
     border: none;
   }
 
-  @media (max-width: 1271px) {
-    line-height: 1.5;
-    font-size: 11px;
+  @media (min-width: 768px) {
+    line-height: 3;
   }
 `;
 
 const Wikibutton = styled.button`
   min-width: 100px;
   padding: 16px 32px;
+  margin: 15px 0;
   border-radius: 4px;
   border: none;
   background: #041844ff;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
 
   &:hover {
@@ -121,29 +125,28 @@ const Wikibutton = styled.button`
     color: #fff;
   }
 
-  @media (max-width: 1271px) {
-    margin: 5px;
-    font-size: 15px;
+  @media (min-width: 768px) {
+    font-size: 20px;
   }
 `;
 
 const CloseModalButton = styled.button`
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 0;
+  right: 0;
   width: 32px;
   height: 32px;
   padding: 0;
   z-index: 10;
-  font-size: 25px;
+  font-size: 15px;
   border: none;
   background-color: #fff;
 
-  @media (max-width: 1271px) {
-    top: 0;
-    right: 0;
-    font-size: 15px;
+  @media (min-width: 768px) {
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
   }
 `;
 

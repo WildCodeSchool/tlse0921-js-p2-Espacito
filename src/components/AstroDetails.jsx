@@ -55,7 +55,7 @@ const Cardcontainer = styled.div`
   border-radius: 51px;
   padding: 15px 15px 35px;
   margin: 30px 0;
-  min-width: 400px;
+  min-width: 27%;
 
   h2,
   h3 {
