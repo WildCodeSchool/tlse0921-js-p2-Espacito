@@ -10,12 +10,6 @@ const Footer = () => (
   <FooterContainer>
     <FooterRow>
       <FirstRow>
-        <Link to="/ressources">
-          <h3>Ressources</h3>
-        </Link>
-        <Link to="/team">
-          <h3>Team</h3>
-        </Link>
         <a
           href="https://shielded-earth-94641.herokuapp.com/"
           target="_blank"
@@ -75,7 +69,7 @@ const FooterContainer = styled.section`
 
   h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
@@ -90,7 +84,11 @@ const FooterContainer = styled.section`
 const FooterRow = styled.div`
   margin: 2rem auto;
 
-  @media (min-width: 768px) {
+  &:hover {
+    color: #7b7fda;
+  }
+
+  @media (min-width: 1300px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -102,25 +100,30 @@ const FirstRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  line-height: 2.5;
 
-  @media (min-width: 768px) {
-    align-items: flex-start;
+  @media (min-width: 1580px) {
+    flex-direction: column;
+    justify-content: center;
     width: 30%;
+    line-height: 1.5;
   }
 `;
 
 const SecondRow = styled.div`
-  display: none;
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+
+  img {
+    width: 40%;
+  }
 
   @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    margin: 2rem auto;
-    width: 25%;
+    width: 30%;
 
     img {
-      max-width: 60%;
+      width: 60%;
     }
   }
 `;
@@ -146,9 +149,13 @@ const LogoRs = styled.a`
     width: 40%;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1580px) {
     justify-content: flex-end;
     align-items: center;
+
+    img {
+      width: 50%;
+    }
   }
 `;
 
