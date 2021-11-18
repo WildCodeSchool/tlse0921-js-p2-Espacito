@@ -4,7 +4,7 @@
 /* eslint-disable prefer-const */
 import styled from 'styled-components';
 import GameContainer from './GameContainer';
-import IssPicture from './IssPicture';
+// import IssPicture from './IssPicture';
 
 const Flappiss = () => (
   <div>

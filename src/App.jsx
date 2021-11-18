@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Navigation from './components/Navigation';
-import Home from './components/Home';
 import PresentationIss from './components/PresentationIss';
 import IssTracker from './components/IssTracker';
 import Pod from './components/Pod';
@@ -10,6 +9,7 @@ import Footer from './components/Footer';
 import Ressources from './components/Ressources';
 import CelestObjects from './components/CelestObjects';
 import Flappiss from './components/Flappiss';
+import Home from './components/Home';
 
 function App() {
   return (

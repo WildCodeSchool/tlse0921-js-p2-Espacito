@@ -5,6 +5,7 @@ import earth from '../ressources/assets-iss/earth.png';
 import law from '../ressources/assets-iss/law.png';
 import aquarium from '../ressources/assets-iss/aquarium.png';
 import bulb from '../ressources/assets-iss/bulb.png';
+import Astronauts from './Astronauts';
 
 const Hero = styled.div`
   display: flex;
@@ -136,6 +137,7 @@ const PresentationIss = () => (
         </li>
       </p>
     </IssContainer>
+    <Astronauts />
     <IssVideoContainer>
       <div>
         <iframe
