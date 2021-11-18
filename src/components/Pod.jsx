@@ -54,7 +54,8 @@ function Pod() {
       }))
       .then((data) => {
         setPod(data);
-      });
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   const [showCard, setShowCard] = useState(false);
@@ -76,7 +77,8 @@ function Pod() {
       }))
       .then((data) => {
         setFilterDate(data);
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   const hidePodCard = () => {

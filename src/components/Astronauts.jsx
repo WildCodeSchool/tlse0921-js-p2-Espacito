@@ -13,7 +13,8 @@ function Astronauts() {
       .then((response) => response.data)
       .then((response) => {
         setAstros(response.people);
-      });
+      })
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div>

@@ -15,7 +15,8 @@ const IssCardInfo = ({ distance, risetime, duration }) => {
         setVelocity(parseInt(data.velocity, 10));
         setAltitude(parseInt(data.altitude, 10));
         setVisibility(data.visibility);
-      });
+      })
+      .catch((err) => console.log(err));
   };
   useEffect(() => {
     getIssCaract();

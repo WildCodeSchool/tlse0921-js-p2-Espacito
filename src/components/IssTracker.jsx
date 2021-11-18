@@ -29,7 +29,8 @@ function IssTracker() {
       .then((data) => {
         setDuration(parseInt(data.response[0].duration, 10));
         setRisetime(parseInt(data.response[1].risetime, 10));
-      });
+      })
+      .catch((err) => console.log(err));
   }, [latGeoloc, lngGeoloc]);
 
   const getISS = () => {
@@ -39,7 +40,8 @@ function IssTracker() {
       .then((data) => {
         setLatIss(parseInt(data.iss_position.latitude, 10));
         setLngIss(parseInt(data.iss_position.longitude, 10));
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
