@@ -10,10 +10,11 @@ import Astronauts from './Astronauts';
 const Hero = styled.div`
   display: flex;
   position: relative;
+  top: -1px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
 
   h1 {
     color: white;
@@ -50,7 +51,7 @@ const HeroVideo = styled.video`
 const IssContainer = styled.div`
   width: 65%;
   list-style: none;
-  margin: 0 auto;
+  margin: 3rem auto 4rem;
 
   li {
     text-align: center;
