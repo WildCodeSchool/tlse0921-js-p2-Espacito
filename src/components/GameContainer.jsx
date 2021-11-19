@@ -153,8 +153,8 @@ const GameContainer = () => {
             [
               asteroid[0] <= cTench + size[0],
               asteroid[0] + asteroidsWidth >= cTench,
-              asteroid[1] - 40 > flightHeight
-                || asteroid[1] + asteroidsGap + 40 < flightHeight + size[1],
+              asteroid[1] - 20 > flightHeight
+                || asteroid[1] + asteroidsGap + 20 < flightHeight + size[1],
             ].every((e) => e)
           ) {
             gamePlaying = false;
