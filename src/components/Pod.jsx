@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 import PodCard from './PodCard';
 import SearchDate from './SearchDate';
 
@@ -78,7 +79,14 @@ function Pod() {
       .then((data) => {
         setFilterDate(data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Certaines informations sont indisponibles pour le moment ! Revenez un peu plus tard !',
+        });
+      });
   };
 
   const hidePodCard = () => {

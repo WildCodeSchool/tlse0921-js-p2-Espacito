@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 import TeamISSCard from './TeamIssCard';
 
 const Container = styled.div`
@@ -25,7 +26,14 @@ function ApiTeamISS() {
       .then((data) => {
         setTeamIss(data.people);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Certaines informations sont indisponibles pour le moment ! Revenez un peu plus tard !',
+        });
+      });
   };
 
   return (

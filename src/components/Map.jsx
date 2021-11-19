@@ -9,7 +9,7 @@ const Map = ({
 }) => (
   <DivMap>
     <Title>Tracker l&apos;ISS</Title>
-    <MapCont center={[lat, lng]} zoom={2} scroollWheelZoom={false}>
+    <MapCont center={[lat, lng]} zoom={3} scroollWheelZoom={false}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a
@@ -27,7 +27,7 @@ const DivMap = styled.div`
   display: block;
 `;
 const MapCont = styled(MapContainer)`
-  height: 550px;
+  height: 600px;
   width: 95%;
   margin: auto;
   border-radius: 10px;

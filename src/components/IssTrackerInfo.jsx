@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 
 const IssCardInfo = ({ distance, risetime, duration }) => {
   const [velocity, setVelocity] = useState(0);
@@ -16,7 +17,14 @@ const IssCardInfo = ({ distance, risetime, duration }) => {
         setAltitude(parseInt(data.altitude, 10));
         setVisibility(data.visibility);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Certaines informations sont indisponibles pour le moment ! Revenez un peu plus tard !',
+        });
+      });
   };
   useEffect(() => {
     getIssCaract();

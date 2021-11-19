@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 import AstroDetails from './AstroDetails';
 
 function Astronauts() {
@@ -14,7 +15,14 @@ function Astronauts() {
       .then((response) => {
         setAstros(response.people);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Certaines informations sont indisponibles pour le moment ! Revenez un peu plus tard !',
+        });
+      });
   }, []);
   return (
     <div>

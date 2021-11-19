@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 import Map from './Map';
 import VideoIss from './VideoIss';
 import IssCardInfo from './IssTrackerInfo';
@@ -41,7 +42,14 @@ function IssTracker() {
         setLatIss(parseInt(data.iss_position.latitude, 10));
         setLngIss(parseInt(data.iss_position.longitude, 10));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Certaines informations sont indisponibles pour le moment ! Revenez un peu plus tard !',
+        });
+      });
   };
 
   useEffect(() => {
