@@ -24,7 +24,8 @@ function ApiTeamISS() {
       .then((res) => res.data)
       .then((data) => {
         setTeamIss(data.people);
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

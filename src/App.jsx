@@ -6,7 +6,6 @@ import PresentationIss from './components/PresentationIss';
 import IssTracker from './components/IssTracker';
 import Pod from './components/Pod';
 import Footer from './components/Footer';
-import Ressources from './components/Ressources';
 import CelestObjects from './components/CelestObjects';
 import Flappiss from './components/Flappiss';
 import Home from './components/Home';
@@ -32,9 +31,6 @@ function App() {
           </Route>
           <Route path="/picture-of-the-day">
             <Pod />
-          </Route>
-          <Route path="/ressources">
-            <Ressources />
           </Route>
           <Route path="/flappiss">
             <Flappiss />
@@ -63,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Audiowide', cursive;
   }
 
-  p {
+  p, ul {
     font-family: 'Poppins', sans-serif;
     color: black;
   }

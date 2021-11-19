@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
-import logo from '../ressources/logo512.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +9,7 @@ const Navigation = () => {
     <Nav>
       <Link to="/">
         <Logo>
-          <img src={logo} alt="Logo Espacito" />
+          <img src="ressources/logo512.png" alt="Logo Espacito" />
         </Logo>
       </Link>
       <Burger onClick={() => setIsOpen(!isOpen)}>
@@ -101,7 +100,8 @@ const Logo = styled.a`
   width: 25%;
 
   img {
-    width: 230px;
+    width: 200px;
+    padding: 10px;
   }
 `;
 

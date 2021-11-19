@@ -2,7 +2,6 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-return-assign */
 import React, { useEffect, useRef } from 'react';
-import flappiss from '../ressources/assets-flappiss/flappiss-set.png';
 
 const GameContainer = () => {
   // general settings of GameContainer
@@ -15,7 +14,7 @@ const GameContainer = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const img = new Image();
-    img.src = flappiss;
+    img.src = 'ressources/assets-flappiss/flappiss-set.png';
     // GameContainer behaviour
     const gravity = 0.5;
     const speed = 6.2;
@@ -154,8 +153,8 @@ const GameContainer = () => {
             [
               asteroid[0] <= cTench + size[0],
               asteroid[0] + asteroidsWidth >= cTench,
-              asteroid[1] > flightHeight
-                || asteroid[1] + asteroidsGap < flightHeight + size[1],
+              asteroid[1] - 40 > flightHeight
+                || asteroid[1] + asteroidsGap + 40 < flightHeight + size[1],
             ].every((e) => e)
           ) {
             gamePlaying = false;
