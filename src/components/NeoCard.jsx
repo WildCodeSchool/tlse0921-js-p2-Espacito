@@ -39,7 +39,10 @@ const NeoCard = ({ asteroid }) => {
                 Date où il sera le plus proche de la terre
               </span>{' '}
               :<br />
-              {asteroid.close_approach_data[0].close_approach_date}
+              {asteroid.close_approach_data[0].close_approach_date
+                .split('-')
+                .reverse()
+                .join('-')}
             </p>
             <p>
               <span className="strong">
